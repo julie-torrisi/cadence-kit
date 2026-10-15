@@ -1,0 +1,423 @@
+{
+  "alias": {
+    "borderWidth": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{borderWidth.xs}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "STROKE_FLOAT"
+            ]
+          }
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{borderWidth.sm}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "STROKE_FLOAT"
+            ]
+          }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{borderWidth.md}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "STROKE_FLOAT"
+            ]
+          }
+        }
+      }
+    },
+    "radius": {
+      "none": {
+        "$type": "dimension",
+        "$value": "{radius.none}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "CORNER_RADIUS"
+            ]
+          }
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{radius.sm}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "CORNER_RADIUS"
+            ]
+          }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{radius.md}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "CORNER_RADIUS"
+            ]
+          }
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{radius.lg}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "CORNER_RADIUS"
+            ]
+          }
+        }
+      }
+    },
+    "color": {
+      "primary": {
+        "interaction": {
+          "$type": "color",
+          "$value": "{mode.primary.interaction}"
+        },
+        "onInteraction": {
+          "$type": "color",
+          "$value": "{mode.primary.onInteraction}"
+        },
+        "brand": {
+          "$type": "color",
+          "$value": "{mode.primary.brand}"
+        },
+        "onBrand": {
+          "$type": "color",
+          "$value": "{mode.primary.onBrand}"
+        }
+      },
+      "secondary": {
+        "interaction": {
+          "$type": "color",
+          "$value": "{mode.secondary.interaction}"
+        },
+        "onInteraction": {
+          "$type": "color",
+          "$value": "{mode.secondary.onInteraction}"
+        },
+        "brand": {
+          "$type": "color",
+          "$value": "{mode.secondary.brand}"
+        },
+        "onBrand": {
+          "$type": "color",
+          "$value": "{mode.secondary.onBrand}"
+        }
+      },
+      "intent": {
+        "infoHighEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.infoHighEmphasis}"
+        },
+        "infoLowEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.infoLowEmphasis}"
+        },
+        "onInfo": {
+          "$type": "color",
+          "$value": "{mode.intent.onInfo}"
+        },
+        "successHighEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.successHighEmphasis}"
+        },
+        "successLowEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.successLowEmphasis}"
+        },
+        "onSuccess": {
+          "$type": "color",
+          "$value": "{mode.intent.onSuccess}"
+        },
+        "warningHighEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.warningHighEmphasis}"
+        },
+        "warningLowEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.warningLowEmphasis}"
+        },
+        "onWarning": {
+          "$type": "color",
+          "$value": "{mode.intent.onWarning}"
+        },
+        "criticalHighEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.criticalHighEmphasis}"
+        },
+        "criticalLowEmphasis": {
+          "$type": "color",
+          "$value": "{mode.intent.criticalLowEmphasis}"
+        },
+        "onCritical": {
+          "$type": "color",
+          "$value": "{mode.intent.onCritical}"
+        }
+      },
+      "background": {
+        "body": {
+          "$type": "color",
+          "$value": "{mode.background.body}"
+        },
+        "highEmphasis": {
+          "$type": "color",
+          "$value": "{mode.background.highEmphasis}"
+        },
+        "mediumEmphasis": {
+          "$type": "color",
+          "$value": "{mode.background.mediumEmphasis}"
+        },
+        "lowEmphasis": {
+          "$type": "color",
+          "$value": "{mode.background.lowEmphasis}"
+        },
+        "overlay": {
+          "$type": "color",
+          "$value": "{mode.background.overlay}"
+        },
+        "inverted": {
+          "$type": "color",
+          "$value": "{mode.background.inverted}"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{mode.text.default}"
+        },
+        "inverted": {
+          "$type": "color",
+          "$value": "{mode.text.inverted}"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "{mode.text.subtle}"
+        },
+        "link": {
+          "$type": "color",
+          "$value": "{mode.text.link}"
+        }
+      },
+      "state": {
+        "disable": {
+          "$type": "color",
+          "$value": "{mode.state.disable}"
+        },
+        "onDisable": {
+          "$type": "color",
+          "$value": "{mode.state.onDisable}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0471,
+              0.0392,
+              0.0353
+            ],
+            "alpha": 0.1608,
+            "hex": "#0c0a09"
+          }
+        },
+        "press": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0471,
+              0.0392,
+              0.0353
+            ],
+            "alpha": 0.0784,
+            "hex": "#0c0a09"
+          }
+        },
+        "select": {
+          "$type": "color",
+          "$value": "{mode.state.select}"
+        },
+        "onSelect": {
+          "$type": "color",
+          "$value": "{mode.state.onSelect}"
+        },
+        "selectInverted": {
+          "$type": "color",
+          "$value": "{mode.state.selectInverted}"
+        },
+        "onSelectInverted": {
+          "$type": "color",
+          "$value": "{mode.state.onSelectInverted}"
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": "{mode.border.subtle}"
+        },
+        "medium": {
+          "$type": "color",
+          "$value": "{mode.border.medium}"
+        },
+        "heavy": {
+          "$type": "color",
+          "$value": "{mode.border.heavy}"
+        },
+        "focusOutline": {
+          "$type": "color",
+          "$value": "{mode.border.focusOutline}"
+        }
+      },
+      "icon": {
+        "default": {
+          "$type": "color",
+          "$value": "{mode.icon.default}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{mode.icon.hover}"
+        },
+        "glow": {
+          "$type": "color",
+          "$value": "{mode.icon.glow}"
+        },
+        "success": {
+          "$type": "color",
+          "$value": "{mode.icon.success}"
+        },
+        "critical": {
+          "$type": "color",
+          "$value": "{mode.icon.critical}"
+        }
+      }
+    },
+    "size": {
+      "none": {
+        "$type": "dimension",
+        "$value": "{size.none}"
+      },
+      "3xs": {
+        "$type": "dimension",
+        "$value": "{size.3xs}"
+      },
+      "2xs": {
+        "$type": "dimension",
+        "$value": "{size.2xs}"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.xs}"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.sm}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{size.md}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.lg}"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{size.xl}"
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "{size.2xl}"
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "{size.3xl}"
+      },
+      "target": {
+        "$type": "dimension",
+        "$value": "{target.min}"
+      }
+    },
+    "space": {
+      "none": {
+        "$type": "dimension",
+        "$value": "{space.none}"
+      },
+      "3xs": {
+        "$type": "dimension",
+        "$value": "{space.3xs}"
+      },
+      "2xs": {
+        "$type": "dimension",
+        "$value": "{space.2xs}"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "{space.xs}"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.sm}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.md}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{space.lg}"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{space.xl}"
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "{space.2xl}"
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "{space.3xl}"
+      }
+    },
+    "grid": {
+      "cols": {
+        "$type": "number",
+        "$value": "{grid.cols}"
+      },
+      "marginLeftRight": {
+        "$type": "dimension",
+        "$value": "{grid.marginLeftRight}"
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": "{grid.gutter}"
+      }
+    },
+    "screen": {
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": "{screen.maxWidth}"
+      },
+      "layout": {
+        "paddingLeftRight": {
+          "$type": "dimension",
+          "$value": "{screen.layout.paddingLeftRight}"
+        }
+      }
+    }
+  }
+}

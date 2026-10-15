@@ -1,0 +1,118 @@
+# Cadence Kit
+
+Design tokens for **Cadence Kit**, the dot-matrix communications kit behind [Cadence](https://github.com/julie-torrisi/cadence-site), a Figma plugin that teaches AI your design system.
+
+The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 502 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
+
+## What's inside
+
+```
+tokens/                 Source of truth, DTCG JSON, one file per Figma collection + mode
+  primitives/scale.json      Scaling: the global dimension sequence (0, 1, 2, 4, 8 … 80)
+  brand/cadence.json         Brands: Cadence palette, role colors, type, shape
+  brand/sample.json          Brands: a second brand to show the system re-skins
+  platform/web|ios|android   Platform: type scale, spacing, grid, touch targets, text pairings
+  theme/light|dark.json      Modes: light/dark color mapping
+  semantic/alias.json        Alias: the consumption layer — use these in product code
+  component/components.json  Components: push, banner, modal, toast, button, input, loader, icon
+  motion/motion-haptics.json Motion & Haptics: durations, easing, reduce-motion, haptic mapping
+  typography/text-styles.json  Text styles and cap-trimmed text pairings
+dist/
+  css/cadence-kit.css        CSS custom properties + text style classes
+  json/<brand>-<platform>-<theme>.json   12 flat files, every token fully resolved
+scripts/build.mjs       Rebuilds dist/ from tokens/ (no dependencies)
+```
+
+## How the layers stack
+
+Each layer only references the one below it, so swapping a brand, platform or theme re-skins everything above it.
+
+```
+Components   component.button.primary.background
+   ↓
+Alias        alias.color.primary.interaction        ← use these in product code
+   ↓
+Modes        mode.primary.interaction   (Light | Dark)
+Platform     space.md, target.min       (Web | iOS | Android)
+   ↓
+Brands       brand.color.role.main.primary.strong  (Cadence | Sample brand)
+   ↓
+Primitives   brand.color.palette.red.500, scale.2xs
+```
+
+| Axis | Modes | What changes |
+|---|---|---|
+| Brand | Cadence, Sample brand | Palette, role colors, font families, corner radii |
+| Platform | Web, iOS, Android | Body size (16 / 17 / 16), min target (44 / 44 / 48), grid columns, screen width, padding |
+| Theme | Light, Dark | Every surface, text, border, state and icon color |
+
+## Use it
+
+### CSS
+
+```html
+<link rel="stylesheet" href="dist/css/cadence-kit.css">
+
+<html data-theme="dark" data-platform="ios" data-brand="sample">
+```
+
+Defaults are Cadence · Web · Light, and dark follows `prefers-color-scheme` unless you set `data-theme`. Every token is a custom property prefixed `--ck-`:
+
+```css
+.cta {
+  height: var(--ck-component-button-height);
+  padding-inline: var(--ck-component-button-paddingX);
+  border-radius: var(--ck-component-button-radius);
+  background: var(--ck-component-button-primary-background);
+  color: var(--ck-component-button-primary-text);
+  transition: background var(--ck-motion-duration-quick) var(--ck-motion-easing-standard);
+}
+```
+
+Text styles ship as classes: `.ck-font-headline-1`, `.ck-font-body-long`, `.ck-pairing-level4-headline-emphasized`, `.ck-font-display-1` and so on.
+
+### JSON
+
+Pick the combination you need from `dist/json/`, e.g. `cadence-android-dark.json`:
+
+```json
+{
+  "component.button.primary.background": "#d71921",
+  "component.button.height": "48px",
+  "typescale.fontSize.body.short": "16px"
+}
+```
+
+### Token tools
+
+The files in `tokens/` follow the DTCG 2025.10 format (colors as sRGB objects with a `hex` fallback, dimensions as `{ value, unit }`), so they work with Style Dictionary and other DTCG-aware tools. Figma variable scopes are kept under `$extensions["com.figma"]`.
+
+## Rebuild
+
+```bash
+npm run build     # or: node scripts/build.mjs
+```
+
+The build fails on any broken or circular reference.
+
+## Type
+
+| Role | Face | License |
+|---|---|---|
+| Display | [Doto](https://fonts.google.com/specimen/Doto) Bold | SIL Open Font License |
+| Headlines, body | [Inter](https://fonts.google.com/specimen/Inter) | SIL Open Font License |
+| Status, code | [Geist Mono](https://fonts.google.com/specimen/Geist+Mono) | SIL Open Font License |
+
+Fonts are not bundled; load them from Google Fonts or your own host.
+
+## Haptics
+
+Haptic guidance lives in `tokens/motion/motion-haptics.json` and the resolved JSON (it isn't CSS). Errors map to `UINotificationFeedbackGenerator .error` on iOS and `HapticFeedbackConstants.REJECT` on Android, success to `.success` / `CONFIRM`, presses to `UIImpactFeedbackGenerator .light` / `CLICK`. Status, activity, tips, announcements and all web surfaces use no haptics, and push haptics are left to the OS.
+
+## Credits
+
+Token architecture adapted from the **SCALES Design Tokens Starter Set** (MIT). See [NOTICE](NOTICE).
+
+## License
+
+[MIT](LICENSE) © 2026 Julie Torrisi-Coffey

@@ -1,0 +1,140 @@
+{
+  "motion": {
+    "duration": {
+      "step": {
+        "$type": "duration",
+        "$value": {
+          "value": 50,
+          "unit": "ms"
+        }
+      },
+      "instant": {
+        "$type": "duration",
+        "$value": {
+          "value": 100,
+          "unit": "ms"
+        }
+      },
+      "quick": {
+        "$type": "duration",
+        "$value": {
+          "value": 200,
+          "unit": "ms"
+        }
+      },
+      "standard": {
+        "$type": "duration",
+        "$value": {
+          "value": 300,
+          "unit": "ms"
+        }
+      },
+      "slow": {
+        "$type": "duration",
+        "$value": {
+          "value": 500,
+          "unit": "ms"
+        }
+      }
+    },
+    "distance": {
+      "enter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      }
+    },
+    "stagger": {
+      "$type": "duration",
+      "$value": {
+        "value": 40,
+        "unit": "ms"
+      }
+    },
+    "easing": {
+      "enter": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ]
+      },
+      "exit": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.4,
+          0,
+          1,
+          1
+        ]
+      },
+      "standard": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "reduceMotion": {
+      "$type": "string",
+      "$value": "fade, 150ms, no movement"
+    }
+  },
+  "haptic": {
+    "error": {
+      "ios": {
+        "$type": "string",
+        "$value": "UINotificationFeedbackGenerator .error"
+      },
+      "android": {
+        "$type": "string",
+        "$value": "HapticFeedbackConstants.REJECT"
+      }
+    },
+    "warning": {
+      "ios": {
+        "$type": "string",
+        "$value": "UINotificationFeedbackGenerator .warning"
+      },
+      "android": {
+        "$type": "string",
+        "$value": "HapticFeedbackConstants.REJECT"
+      }
+    },
+    "success": {
+      "ios": {
+        "$type": "string",
+        "$value": "UINotificationFeedbackGenerator .success"
+      },
+      "android": {
+        "$type": "string",
+        "$value": "HapticFeedbackConstants.CONFIRM"
+      }
+    },
+    "press": {
+      "ios": {
+        "$type": "string",
+        "$value": "UIImpactFeedbackGenerator .light"
+      },
+      "android": {
+        "$type": "string",
+        "$value": "HapticFeedbackConstants.CLICK"
+      }
+    },
+    "none": {
+      "$type": "string",
+      "$value": "none (status, activity, tips, announcements, all web)"
+    },
+    "push": {
+      "$type": "string",
+      "$value": "OS-controlled; do not spec"
+    }
+  }
+}

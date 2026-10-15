@@ -1,0 +1,326 @@
+{
+  "mode": {
+    "primary": {
+      "interaction": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.strong}",
+        "$description": "color that indicates interactions"
+      },
+      "onInteraction": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.lightest}",
+        "$description": "color for elements placed on interactive backgrounds"
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.medium}",
+        "$description": "background color for primary brand elements"
+      },
+      "onBrand": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.dark}",
+        "$description": "color for elements placed on the primary brand background"
+      }
+    },
+    "secondary": {
+      "interaction": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.strong}",
+        "$description": "secondary interaction color for backgrounds"
+      },
+      "onInteraction": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.lightest}",
+        "$description": "secondary foreground color for interactions"
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.secondary.strong}",
+        "$description": "secondary brand color for backgrounds"
+      },
+      "onBrand": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.secondary.lightest}",
+        "$description": "color for elements placed on the secondary brand background"
+      }
+    },
+    "intent": {
+      "infoHighEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.info.light}"
+      },
+      "infoLowEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.info.medium}"
+      },
+      "onInfo": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.info.dark}"
+      },
+      "successHighEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.success.light}"
+      },
+      "successLowEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.success.medium}"
+      },
+      "onSuccess": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.success.dark}"
+      },
+      "warningHighEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.warning.light}"
+      },
+      "warningLowEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.warning.medium}"
+      },
+      "onWarning": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.warning.dark}"
+      },
+      "criticalHighEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.critical.light}"
+      },
+      "criticalLowEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.critical.medium}"
+      },
+      "onCritical": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.critical.dark}"
+      }
+    },
+    "background": {
+      "body": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.darkest}",
+        "$description": "body background color"
+      },
+      "highEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.dark}",
+        "$description": "background for high-emphasis components"
+      },
+      "mediumEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.bold}",
+        "$description": "background for medium-emphasis components"
+      },
+      "lowEmphasis": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.bold}",
+        "$description": "background for low-emphasis elements"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.6392,
+          "hex": "#000000"
+        },
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ]
+          }
+        }
+      },
+      "inverted": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.lightest}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ]
+          }
+        }
+      }
+    },
+    "text": {
+      "default": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.lightest}",
+        "$description": "default text color"
+      },
+      "inverted": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.dark}",
+        "$description": "inverted text color"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.medium}",
+        "$description": "subtle text color"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.medium}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "TEXT_FILL"
+            ]
+          }
+        }
+      }
+    },
+    "state": {
+      "disable": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.lighter}",
+        "$description": "background for disabled elements"
+      },
+      "onDisable": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.strong}",
+        "$description": "color for elements on a disabled background"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.9608,
+            0.9569
+          ],
+          "alpha": 0.1608,
+          "hex": "#f5f5f4"
+        },
+        "$description": "state overlay for hovered elements"
+      },
+      "press": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.9608,
+            0.9569
+          ],
+          "alpha": 0.0784,
+          "hex": "#f5f5f4"
+        },
+        "$description": "state overlay for pressed elements"
+      },
+      "select": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.light}"
+      },
+      "onSelect": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.bold}"
+      },
+      "selectInverted": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.bold}"
+      },
+      "onSelectInverted": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.light}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.bold}"
+      },
+      "medium": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.medium}"
+      },
+      "heavy": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.light}"
+      },
+      "focusOutline": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.medium}",
+        "$description": "default focus outline color"
+      }
+    },
+    "icon": {
+      "default": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.medium}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "{brand.color.role.main.primary.medium}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "glow": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.3529,
+            0.3765
+          ],
+          "alpha": 0.6,
+          "hex": "#ff5a60"
+        },
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "EFFECT_COLOR"
+            ]
+          }
+        }
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.success.medium}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": "{brand.color.role.intent.critical.medium}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

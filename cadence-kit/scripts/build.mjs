@@ -1,0 +1,152 @@
+#!/usr/bin/env node
+// Builds dist/ from tokens/. No dependencies — Node 18+.
+//
+//   dist/css/cadence-kit.css      CSS custom properties. Defaults: Cadence brand, Web, Light.
+//                                  Switch with data-theme, data-platform, data-brand attributes.
+//   dist/json/<brand>-<platform>-<theme>.json   Flat, fully resolved values for every combination.
+//
+// The CSS keeps references as var() so overriding a lower layer (brand, platform, theme)
+// flows up through alias and component tokens automatically.
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const T = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'tokens', f), 'utf8'));
+const PREFIX = 'ck';
+
+const sets = {
+  scale: T('primitives/scale.json'),
+  brand: { cadence: T('brand/cadence.json'), sample: T('brand/sample.json') },
+  platform: { web: T('platform/web.json'), ios: T('platform/ios.json'), android: T('platform/android.json') },
+  theme: { light: T('theme/light.json'), dark: T('theme/dark.json') },
+  alias: T('semantic/alias.json'),
+  component: T('component/components.json'),
+  motion: T('motion/motion-haptics.json'),
+  text: T('typography/text-styles.json'),
+};
+
+// ---------- helpers ----------
+function flatten(tree, prefix = [], out = {}) {
+  for (const [k, v] of Object.entries(tree)) {
+    if (k.startsWith('$')) continue;
+    if (v && typeof v === 'object' && '$value' in v) out[[...prefix, k].join('.')] = v;
+    else if (v && typeof v === 'object') flatten(v, [...prefix, k], out);
+  }
+  return out;
+}
+const isRef = (v) => typeof v === 'string' && /^\{[^}]+\}$/.test(v);
+const refPath = (v) => v.slice(1, -1);
+const cssName = (p) => `--${PREFIX}-${p.replace(/\./g, '-')}`;
+
+function cssValue(token) {
+  const v = token.$value;
+  switch (token.$type) {
+    case 'color': {
+      const a = v.alpha;
+      return a === undefined || a === 1 ? v.hex : v.hex + Math.round(a * 255).toString(16).padStart(2, '0');
+    }
+    case 'dimension': return v.value === 0 ? '0' : `${+v.value.toFixed(3)}${v.unit}`;
+    case 'duration': return `${v.value}${v.unit}`;
+    case 'cubicBezier': return `cubic-bezier(${v.join(', ')})`;
+    case 'fontFamily': return Array.isArray(v) ? v.map((f) => `"${f}"`).join(', ') : `"${v}"`;
+    default: return String(v);
+  }
+}
+
+// Tokens that only make sense as documentation (haptics, reduce-motion notes) stay out of CSS.
+const inCss = (t) => t.$type !== 'string';
+
+function layer(flat) {
+  const out = {};
+  for (const [p, t] of Object.entries(flat)) {
+    if (!inCss(t)) continue;
+    out[cssName(p)] = isRef(t.$value) ? `var(${cssName(refPath(t.$value))})` : cssValue(t);
+  }
+  return out;
+}
+
+function diff(base, over) {
+  const out = {};
+  for (const [k, v] of Object.entries(over)) if (base[k] !== v) out[k] = v;
+  return out;
+}
+
+const block = (sel, decls, indent = '') =>
+  `${indent}${sel} {\n${Object.entries(decls).map(([k, v]) => `${indent}  ${k}: ${v};`).join('\n')}\n${indent}}\n`;
+
+// ---------- resolve + validate ----------
+function combo(brand, platform, theme) {
+  return {
+    ...flatten(sets.scale), ...flatten(sets.brand[brand]), ...flatten(sets.platform[platform]),
+    ...flatten(sets.theme[theme]), ...flatten(sets.alias), ...flatten(sets.component), ...flatten(sets.motion),
+  };
+}
+
+function resolve(all, p, seen = new Set()) {
+  const t = all[p];
+  if (!t) throw new Error(`Unresolved reference: {${p}}`);
+  if (seen.has(p)) throw new Error(`Circular reference at {${p}}`);
+  seen.add(p);
+  return isRef(t.$value) ? resolve(all, refPath(t.$value), seen) : t;
+}
+
+const combos = [];
+for (const b of Object.keys(sets.brand))
+  for (const pl of Object.keys(sets.platform))
+    for (const th of Object.keys(sets.theme)) combos.push([b, pl, th]);
+
+fs.mkdirSync(path.join(ROOT, 'dist/json'), { recursive: true });
+fs.mkdirSync(path.join(ROOT, 'dist/css'), { recursive: true });
+
+let tokenCount = 0;
+for (const [b, pl, th] of combos) {
+  const all = combo(b, pl, th);
+  tokenCount = Object.keys(all).length;
+  const out = {};
+  for (const p of Object.keys(all)) {
+    const t = resolve(all, p);
+    out[p] = t.$type === 'string' ? t.$value : cssValue(t);
+  }
+  fs.writeFileSync(path.join(ROOT, `dist/json/${b}-${pl}-${th}.json`), JSON.stringify(out, null, 2) + '\n');
+}
+
+// ---------- CSS ----------
+const base = {
+  ...layer(flatten(sets.scale)), ...layer(flatten(sets.brand.cadence)), ...layer(flatten(sets.platform.web)),
+  ...layer(flatten(sets.theme.light)), ...layer(flatten(sets.alias)), ...layer(flatten(sets.component)),
+  ...layer(flatten(sets.motion)),
+};
+const dark = diff(layer(flatten(sets.theme.light)), layer(flatten(sets.theme.dark)));
+const light = diff(layer(flatten(sets.theme.dark)), layer(flatten(sets.theme.light)));
+
+let css = `/* Cadence Kit design tokens — generated by scripts/build.mjs. Do not edit by hand. */\n`;
+css += `/* Defaults: Cadence brand · Web · Light. Override with data-brand="sample", data-platform="ios|android", data-theme="dark|light". */\n\n`;
+css += block(':root', base) + '\n';
+css += `@media (prefers-color-scheme: dark) {\n${block(':root:not([data-theme="light"])', dark, '  ')}}\n\n`;
+css += block('[data-theme="dark"]', dark) + '\n';
+css += block('[data-theme="light"]', light) + '\n';
+for (const pl of ['ios', 'android']) {
+  css += block(`[data-platform="${pl}"]`, diff(layer(flatten(sets.platform.web)), layer(flatten(sets.platform[pl])))) + '\n';
+}
+css += block('[data-brand="sample"]', diff(layer(flatten(sets.brand.cadence)), layer(flatten(sets.brand.sample)))) + '\n';
+
+// Text style utility classes
+css += `/* Text styles */\n`;
+for (const [p, t] of Object.entries(flatten(sets.text))) {
+  const v = t.$value;
+  const cls = '.' + PREFIX + '-' + p.replace(/^textStyle\./, '').replace(/\./g, '-');
+  const decls = {
+    'font-family': `"${v.fontFamily}"`,
+    'font-weight': v.fontWeight,
+    'font-size': `${v.fontSize.value}px`,
+    'line-height': `${t.$extensions['com.figma'].lineHeightPx}px`,
+    'letter-spacing': v.letterSpacing.value === 0 ? '0' : `${v.letterSpacing.value}px`,
+  };
+  if (t.$extensions['com.figma'].leadingTrim === 'CAP_HEIGHT') decls['text-box'] = 'trim-both cap alphabetic';
+  css += block(cls, decls);
+}
+
+fs.writeFileSync(path.join(ROOT, 'dist/css/cadence-kit.css'), css);
+console.log(`Built ${combos.length} resolved combinations (${tokenCount} tokens each) and dist/css/cadence-kit.css`);

@@ -1,0 +1,272 @@
+{
+  "component": {
+    "button": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{alias.size.target}"
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{alias.space.md}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.md}"
+      },
+      "primary": {
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.primary.interaction}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{alias.color.primary.onInteraction}"
+        }
+      },
+      "secondary": {
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.secondary.interaction}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{alias.color.secondary.onInteraction}"
+        }
+      }
+    },
+    "push": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{pairing.level4.gap}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.lg}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{alias.color.background.highEmphasis}"
+      }
+    },
+    "banner": {
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{alias.space.md}"
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.md}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{alias.color.background.highEmphasis}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{alias.color.border.subtle}"
+      }
+    },
+    "modal": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{alias.space.lg}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{alias.space.md}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.lg}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{alias.color.background.highEmphasis}"
+      },
+      "scrim": {
+        "$type": "color",
+        "$value": "{alias.color.background.overlay}"
+      }
+    },
+    "toast": {
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{alias.space.md}"
+      },
+      "paddingY": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.md}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{alias.color.background.inverted}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{alias.color.text.inverted}"
+      }
+    },
+    "input": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{alias.space.xs}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.md}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{alias.color.background.body}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{alias.color.border.heavy}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{alias.borderWidth.xs}"
+      },
+      "focusRing": {
+        "$type": "color",
+        "$value": "{alias.color.border.focusOutline}"
+      }
+    },
+    "loader": {
+      "dotSize": {
+        "$type": "dimension",
+        "$value": "{alias.space.3xs}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{alias.space.2xs}"
+      },
+      "dotActive": {
+        "$type": "color",
+        "$value": "{alias.color.primary.interaction}"
+      },
+      "dotIdle": {
+        "$type": "color",
+        "$value": "{alias.color.border.medium}"
+      },
+      "barWidth": {
+        "$type": "dimension",
+        "$value": "{alias.space.sm}"
+      },
+      "barRadius": {
+        "$type": "dimension",
+        "$value": {
+          "value": 999,
+          "unit": "px"
+        }
+      }
+    },
+    "sectionMessage": {
+      "height": {
+        "min": {
+          "$type": "dimension",
+          "$value": "{alias.size.md}"
+        }
+      },
+      "spacing": {
+        "innerY": {
+          "$type": "dimension",
+          "$value": "{alias.space.md}"
+        },
+        "innerX": {
+          "$type": "dimension",
+          "$value": "{alias.space.sm}"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{alias.space.xs}"
+        }
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{alias.radius.md}"
+      },
+      "success": {
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.intent.successHighEmphasis}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{alias.color.intent.onSuccess}"
+        },
+        "icon": {
+          "$type": "color",
+          "$value": "{alias.color.intent.onSuccess}"
+        }
+      },
+      "warning": {
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.intent.warningHighEmphasis}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{alias.color.intent.onWarning}"
+        },
+        "icon": {
+          "$type": "color",
+          "$value": "{alias.color.intent.onWarning}"
+        }
+      }
+    },
+    "stack": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{alias.space.xs}"
+      }
+    },
+    "icon": {
+      "default": {
+        "$type": "color",
+        "$value": "{alias.color.icon.default}"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "{alias.color.icon.hover}"
+      },
+      "glow": {
+        "$type": "color",
+        "$value": "{alias.color.icon.glow}"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{alias.color.icon.success}"
+      },
+      "critical": {
+        "$type": "color",
+        "$value": "{alias.color.icon.critical}"
+      },
+      "dimOpacity": {
+        "$type": "number",
+        "$value": 30,
+        "$description": "Opacity in percent for dimmed animation frames"
+      }
+    }
+  }
+}

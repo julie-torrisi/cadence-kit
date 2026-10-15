@@ -1,0 +1,11 @@
+Cadence Kit
+Copyright (c) 2026 Julie Torrisi-Coffey
+
+This project's token architecture (Scaling, Brands, Platform, Modes, Alias and
+Components collections) is adapted from the SCALES Design Tokens Starter Set by
+Jeromski62, published on Figma Community under the MIT License. The Cadence
+palette, type choices, text pairings, component tokens, motion and haptics
+tokens are original to Cadence Kit.
+
+Fonts referenced by these tokens (Doto, Inter, Geist Mono, Lora) are licensed
+under the SIL Open Font License 1.1 and are not distributed with this project.

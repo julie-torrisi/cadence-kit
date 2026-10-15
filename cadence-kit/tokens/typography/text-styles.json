@@ -1,0 +1,728 @@
+{
+  "textStyle": {
+    "font": {
+      "display": {
+        "1": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Doto",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 100,
+              "unit": "px"
+            },
+            "lineHeight": 1.12,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 112,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "2": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Doto",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 80,
+              "unit": "px"
+            },
+            "lineHeight": 1.15,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 92,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "3": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Doto",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 24,
+              "unit": "px"
+            },
+            "lineHeight": 1.3333,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 32,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 900,
+            "fontSize": {
+              "value": 32,
+              "unit": "px"
+            },
+            "lineHeight": 1.25,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Black",
+              "lineHeightPx": 40,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "2": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 24,
+              "unit": "px"
+            },
+            "lineHeight": 1.6667,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 40,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "3": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 20,
+              "unit": "px"
+            },
+            "lineHeight": 1.3,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 26,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "4": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.5,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 24,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "5": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 14,
+              "unit": "px"
+            },
+            "lineHeight": 1.5714,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 22,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 600,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.5,
+            "letterSpacing": {
+              "value": 0.08,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Semi Bold",
+              "lineHeightPx": 24,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "long": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.625,
+            "letterSpacing": {
+              "value": 0.08,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 26,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.5,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 24,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "long": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.625,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 26,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "small": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 14,
+              "unit": "px"
+            },
+            "lineHeight": 1.4286,
+            "letterSpacing": {
+              "value": 0.08,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 20,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.625,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 26,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "hover": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Inter",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 16,
+              "unit": "px"
+            },
+            "lineHeight": 1.625,
+            "letterSpacing": {
+              "value": 0.08,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 26,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Geist Mono",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 14,
+              "unit": "px"
+            },
+            "lineHeight": 1.4286,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 20,
+              "leadingTrim": "NONE"
+            }
+          }
+        }
+      },
+      "status": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Geist Mono",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 14,
+            "unit": "px"
+          },
+          "lineHeight": 1.4286,
+          "letterSpacing": {
+            "value": 0.08,
+            "unit": "px"
+          }
+        },
+        "$extensions": {
+          "com.figma": {
+            "style": "Regular",
+            "lineHeightPx": 20,
+            "leadingTrim": "NONE"
+          }
+        }
+      }
+    },
+    "pairing": {
+      "level1": {
+        "headline": {
+          "emphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 900,
+              "fontSize": {
+                "value": 32,
+                "unit": "px"
+              },
+              "lineHeight": 1.25,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Black",
+                "lineHeightPx": 40,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          }
+        }
+      },
+      "level2": {
+        "headline": {
+          "emphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 700,
+              "fontSize": {
+                "value": 24,
+                "unit": "px"
+              },
+              "lineHeight": 1.6667,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Bold",
+                "lineHeightPx": 40,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          }
+        }
+      },
+      "level3": {
+        "headline": {
+          "emphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 700,
+              "fontSize": {
+                "value": 20,
+                "unit": "px"
+              },
+              "lineHeight": 1.3,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Bold",
+                "lineHeightPx": 26,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          },
+          "default": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 500,
+              "fontSize": {
+                "value": 20,
+                "unit": "px"
+              },
+              "lineHeight": 1.3,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Medium",
+                "lineHeightPx": 26,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          },
+          "deemphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 400,
+              "fontSize": {
+                "value": 20,
+                "unit": "px"
+              },
+              "lineHeight": 1.3,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Regular",
+                "lineHeightPx": 26,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          }
+        }
+      },
+      "level4": {
+        "headline": {
+          "emphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 700,
+              "fontSize": {
+                "value": 16,
+                "unit": "px"
+              },
+              "lineHeight": 1.5,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Bold",
+                "lineHeightPx": 24,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          },
+          "default": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 500,
+              "fontSize": {
+                "value": 16,
+                "unit": "px"
+              },
+              "lineHeight": 1.5,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Medium",
+                "lineHeightPx": 24,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          },
+          "deemphasized": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "Inter",
+              "fontWeight": 400,
+              "fontSize": {
+                "value": 16,
+                "unit": "px"
+              },
+              "lineHeight": 1.5,
+              "letterSpacing": {
+                "value": -0.16,
+                "unit": "px"
+              }
+            },
+            "$extensions": {
+              "com.figma": {
+                "style": "Regular",
+                "lineHeightPx": 24,
+                "leadingTrim": "CAP_HEIGHT"
+              }
+            }
+          }
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 16,
+            "unit": "px"
+          },
+          "lineHeight": 1.625,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$extensions": {
+          "com.figma": {
+            "style": "Regular",
+            "lineHeightPx": 26,
+            "leadingTrim": "CAP_HEIGHT"
+          }
+        }
+      },
+      "body-link": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": 600,
+          "fontSize": {
+            "value": 16,
+            "unit": "px"
+          },
+          "lineHeight": 1.625,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$extensions": {
+          "com.figma": {
+            "style": "Semi Bold",
+            "lineHeightPx": 26,
+            "leadingTrim": "CAP_HEIGHT"
+          }
+        }
+      },
+      "meta": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 14,
+            "unit": "px"
+          },
+          "lineHeight": 1.4286,
+          "letterSpacing": {
+            "value": 0.08,
+            "unit": "px"
+          }
+        },
+        "$extensions": {
+          "com.figma": {
+            "style": "Regular",
+            "lineHeightPx": 20,
+            "leadingTrim": "CAP_HEIGHT"
+          }
+        }
+      },
+      "display": {
+        "word": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Doto",
+            "fontWeight": 700,
+            "fontSize": {
+              "value": 24,
+              "unit": "px"
+            },
+            "lineHeight": 1.3333,
+            "letterSpacing": {
+              "value": -0.16,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Bold",
+              "lineHeightPx": 32,
+              "leadingTrim": "CAP_HEIGHT"
+            }
+          }
+        },
+        "status": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "Geist Mono",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 14,
+              "unit": "px"
+            },
+            "lineHeight": 1.4286,
+            "letterSpacing": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 20,
+              "leadingTrim": "CAP_HEIGHT"
+            }
+          }
+        }
+      }
+    }
+  }
+}

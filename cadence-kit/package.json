@@ -1,0 +1,23 @@
+{
+  "name": "cadence-kit",
+  "version": "0.1.0",
+  "description": "Design tokens for Cadence Kit, a dot-matrix communications kit for Web, iOS and Android (DTCG JSON, CSS, resolved JSON).",
+  "license": "MIT",
+  "author": "Julie Torrisi-Coffey (https://julietorrisi.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julie-torrisi/cadence-kit.git"
+  },
+  "type": "module",
+  "files": ["tokens", "dist", "NOTICE"],
+  "exports": {
+    "./css": "./dist/css/cadence-kit.css",
+    "./json/*": "./dist/json/*.json",
+    "./tokens/*": "./tokens/*"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "keywords": ["design-tokens", "dtcg", "design-system", "figma", "css-variables", "cadence"],
+  "engines": { "node": ">=18" }
+}

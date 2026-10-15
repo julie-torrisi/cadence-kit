@@ -1,0 +1,732 @@
+{
+  "typescale": {
+    "fontWeight": {
+      "display": {
+        "1": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.display}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "2": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.display}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.black}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "2": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.bold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "3": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.bold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "4": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.bold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "5": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.bold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.semiBold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "long": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.bold}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "long": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "small": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        },
+        "hover": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "fontWeight",
+          "$value": "{brand.font.weight.default}",
+          "$extensions": {
+            "com.figma": {
+              "scopes": [
+                "FONT_STYLE"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fontFamily": {
+      "display": {
+        "1": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.display}"
+        },
+        "2": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.display}"
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "2": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "3": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "4": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "5": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "long": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "long": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "small": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        },
+        "hover": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.content}"
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "fontFamily",
+          "$value": "{brand.font.family.code}"
+        }
+      }
+    },
+    "fontSize": {
+      "display": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.3xl}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.2xl}"
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.lg}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.md}"
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.sm}"
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.2xs}"
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        },
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.2xs}"
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        },
+        "hover": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.xs}"
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.size.2xs}"
+        }
+      }
+    },
+    "lineHeight": {
+      "display": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.3xl}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.2xl}"
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.ml}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.ml}"
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.sm}"
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.xs}"
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.2xs}"
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.xs}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.sm}"
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.xs}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.sm}"
+        },
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.3xs}"
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.sm}"
+        },
+        "hover": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.sm}"
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.lineHeight.3xs}"
+        }
+      }
+    },
+    "letterSpacing": {
+      "display": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        }
+      },
+      "headline": {
+        "1": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.xs}"
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.sm}"
+        }
+      },
+      "label": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.md}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.md}"
+        }
+      },
+      "body": {
+        "short": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.sm}"
+        },
+        "long": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.sm}"
+        },
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.md}"
+        }
+      },
+      "hyperlink": {
+        "default": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.sm}"
+        },
+        "hover": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.md}"
+        }
+      },
+      "code": {
+        "small": {
+          "$type": "dimension",
+          "$value": "{brand.font.letterSpacing.sm}"
+        }
+      }
+    }
+  },
+  "size": {
+    "none": {
+      "$type": "dimension",
+      "$value": "{scale.none}"
+    },
+    "3xs": {
+      "$type": "dimension",
+      "$value": "{scale.3xs}"
+    },
+    "2xs": {
+      "$type": "dimension",
+      "$value": "{scale.2xs}"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "{scale.xs}"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "{scale.sm}"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "{scale.md}"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "{scale.xl}"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "{scale.2xl}"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "{scale.4xl}"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "{scale.5xl}"
+    }
+  },
+  "space": {
+    "none": {
+      "$type": "dimension",
+      "$value": "{scale.none}"
+    },
+    "3xs": {
+      "$type": "dimension",
+      "$value": "{scale.6xs}"
+    },
+    "2xs": {
+      "$type": "dimension",
+      "$value": "{scale.5xs}"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "{scale.4xs}"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "{scale.3xs}"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "{scale.2xs}"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "{scale.sm}"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "{scale.md}"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "{scale.xl}"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "{scale.4xl}"
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "{brand.shape.none}"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "{brand.shape.sm}"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "{brand.shape.md}"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "{brand.shape.lg}"
+    }
+  },
+  "borderWidth": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "{scale.7xs}",
+      "$description": "smallest thickness for borders"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "{scale.6xs}",
+      "$description": "small thickness for borders"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "{scale.5xs}",
+      "$description": "medium border thickness"
+    }
+  },
+  "screen": {
+    "maxWidth": {
+      "$type": "dimension",
+      "$value": {
+        "value": 412,
+        "unit": "px"
+      },
+      "$description": "max-width of screensize"
+    },
+    "layout": {
+      "paddingLeftRight": {
+        "$type": "dimension",
+        "$value": "{space.md}",
+        "$description": "horizontal wrapper padding"
+      }
+    }
+  },
+  "grid": {
+    "cols": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "cols of grid on breakpoint"
+    },
+    "marginLeftRight": {
+      "$type": "dimension",
+      "$value": "{size.md}",
+      "$description": "margin of grid"
+    },
+    "gutter": {
+      "$type": "dimension",
+      "$value": "{space.xs}",
+      "$description": "gutter of grid"
+    }
+  },
+  "target": {
+    "min": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "minimum touch/click target",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ]
+        }
+      }
+    }
+  },
+  "pairing": {
+    "level1": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.md}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    },
+    "level2": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.sm}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    },
+    "level3": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.xs}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    },
+    "level4": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.xs}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    },
+    "meta": {
+      "iconGap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    },
+    "display": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.xs}",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [
+              "GAP"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
