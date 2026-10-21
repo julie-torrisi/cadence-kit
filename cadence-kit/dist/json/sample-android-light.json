@@ -146,6 +146,7 @@
   "brand.color.palette.neutral.900": "#1c1917",
   "brand.color.palette.neutral.950": "#0c0a09",
   "brand.font.family.display": "\"Lora\"",
+  "brand.font.family.serif": "\"Lora\"",
   "brand.font.family.content": "\"Lora\"",
   "brand.font.family.code": "\"Geist Mono\"",
   "brand.font.weight.black": "900",

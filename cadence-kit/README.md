@@ -2,7 +2,7 @@
 
 Design tokens for **Cadence Kit**, the dot-matrix communications kit behind [Cadence](https://github.com/julie-torrisi/cadence-site), a Figma plugin that teaches AI your design system.
 
-The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 502 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
+The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 503 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
 
 ## What's inside
 
@@ -100,10 +100,27 @@ The build fails on any broken or circular reference.
 | Role | Face | License |
 |---|---|---|
 | Display | [Doto](https://fonts.google.com/specimen/Doto) Bold | SIL Open Font License |
+| Serif statements, title kickers | [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) | SIL Open Font License |
 | Headlines, body | [Inter](https://fonts.google.com/specimen/Inter) | SIL Open Font License |
 | Status, code | [Geist Mono](https://fonts.google.com/specimen/Geist+Mono) | SIL Open Font License |
 
 Fonts are not bundled; load them from Google Fonts or your own host.
+
+### Serif patterns
+
+`--ck-brand-font-family-serif` drives two patterns that sit beside the dot type.
+
+**Title kicker.** The short line above a title: a dot `>` arrow (drawn on the dot grid, so it never moves) followed by a serif label in the subtle text color. The label is nudged up so the arrow's point meets the middle of its capital letters: 4.5px on desktop, 5.5px under 1024px, 0 under 640px.
+
+```css
+.kick{display:flex;align-items:flex-start;gap:calc(var(--p)*3);font-family:var(--ck-brand-font-family-serif);font-size:calc(var(--p)*9);line-height:1.1}
+.kick{--kick-lift:4.5px}
+@media (max-width:1023px){.kick{--kick-lift:5.5px}}
+@media (max-width:639px){.kick{--kick-lift:0px}}
+.kick>span:last-child{position:relative;top:calc(var(--kick-lift)*-1)}
+```
+
+**Pixel-serif emphasis.** In a serif statement, one or two key words are drawn at 30 cells per em and scaled up with hard edges, in the primary interaction color. Use it at display sizes only: at body size the pixels break letters apart and the copy stops being readable. Keep the real text in the page for screen readers.
 
 ## Haptics
 

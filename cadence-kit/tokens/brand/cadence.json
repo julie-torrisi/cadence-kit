@@ -1229,6 +1229,11 @@
           "$value": "Doto",
           "$description": "font family for display fonts"
         },
+        "serif": {
+          "$type": "fontFamily",
+          "$value": "Instrument Serif",
+          "$description": "font family for serif statements: subtitles, title kickers and pixel-serif emphasis"
+        },
         "content": {
           "$type": "fontFamily",
           "$value": "Inter",

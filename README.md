@@ -2,7 +2,7 @@
 
 Design tokens for **Cadence Kit**, the dot-matrix communications kit behind [Cadence](https://github.com/julie-torrisi/cadence-site), a Figma plugin that teaches AI your design system.
 
-The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 502 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
+The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 503 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
 
 ## What's inside
 

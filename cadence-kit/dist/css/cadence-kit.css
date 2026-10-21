@@ -149,6 +149,7 @@
   --ck-brand-color-palette-neutral-900: #161918;
   --ck-brand-color-palette-neutral-950: #0b0c0c;
   --ck-brand-font-family-display: "Doto";
+  --ck-brand-font-family-serif: "Instrument Serif";
   --ck-brand-font-family-content: "Inter";
   --ck-brand-font-family-code: "Geist Mono";
   --ck-brand-font-weight-black: 900;
@@ -735,6 +736,7 @@
   --ck-brand-color-palette-neutral-900: #1c1917;
   --ck-brand-color-palette-neutral-950: #0c0a09;
   --ck-brand-font-family-display: "Lora";
+  --ck-brand-font-family-serif: "Lora";
   --ck-brand-font-family-content: "Lora";
 }
 

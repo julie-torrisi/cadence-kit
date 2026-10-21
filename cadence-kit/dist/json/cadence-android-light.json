@@ -146,6 +146,7 @@
   "brand.color.palette.neutral.900": "#161918",
   "brand.color.palette.neutral.950": "#0b0c0c",
   "brand.font.family.display": "\"Doto\"",
+  "brand.font.family.serif": "\"Instrument Serif\"",
   "brand.font.family.content": "\"Inter\"",
   "brand.font.family.code": "\"Geist Mono\"",
   "brand.font.weight.black": "900",
