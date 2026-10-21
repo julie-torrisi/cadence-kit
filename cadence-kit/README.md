@@ -122,6 +122,8 @@ Fonts are not bundled; load them from Google Fonts or your own host.
 
 **Pixel-serif emphasis.** In a serif statement, one or two key words are drawn at 30 cells per em and scaled up with hard edges, in the primary interaction color. Use it at display sizes only: at body size the pixels break letters apart and the copy stops being readable. Keep the real text in the page for screen readers.
 
+Section numbers in a title kicker (`01 · …`) always use pixel-serif emphasis in the primary interaction color. The rest of the label stays smooth.
+
 ## Haptics
 
 Haptic guidance lives in `tokens/motion/motion-haptics.json` and the resolved JSON (it isn't CSS). Errors map to `UINotificationFeedbackGenerator .error` on iOS and `HapticFeedbackConstants.REJECT` on Android, success to `.success` / `CONFIRM`, presses to `UIImpactFeedbackGenerator .light` / `CLICK`. Status, activity, tips, announcements and all web surfaces use no haptics, and push haptics are left to the OS.
