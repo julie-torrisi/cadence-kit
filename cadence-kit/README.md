@@ -124,6 +124,12 @@ Fonts are not bundled; load them from Google Fonts or your own host.
 
 Section numbers in a title kicker (`01 · …`) always use pixel-serif emphasis in the primary interaction color. The rest of the label stays smooth.
 
+**Proof label.** The small label above the evidence line in a step or card. Doto ExtraBold, 13px, uppercase, 0.78px tracking, in the subtle text color, sitting 4px above the proof copy. Token: `textStyle.font.label.proof`.
+
+```css
+.step .proof .k{display:block;margin-bottom:4px;font-family:Doto,monospace;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+```
+
 ## Haptics
 
 Haptic guidance lives in `tokens/motion/motion-haptics.json` and the resolved JSON (it isn't CSS). Errors map to `UINotificationFeedbackGenerator .error` on iOS and `HapticFeedbackConstants.REJECT` on Android, success to `.success` / `CONFIRM`, presses to `UIImpactFeedbackGenerator .light` / `CLICK`. Status, activity, tips, announcements and all web surfaces use no haptics, and push haptics are left to the OS.

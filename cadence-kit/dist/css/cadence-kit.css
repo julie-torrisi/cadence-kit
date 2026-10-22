@@ -811,6 +811,13 @@
   line-height: 26px;
   letter-spacing: 0.08px;
 }
+.ck-font-label-proof {
+  font-family: "Doto";
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 20.15px;
+  letter-spacing: 0.78px;
+}
 .ck-font-body-short {
   font-family: "Inter";
   font-weight: 400;

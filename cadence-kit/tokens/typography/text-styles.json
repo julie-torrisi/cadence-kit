@@ -235,6 +235,31 @@
               "leadingTrim": "NONE"
             }
           }
+        },
+        "proof": {
+          "$type": "typography",
+          "$description": "Proof label above evidence copy in cover-letter steps and cards. Uppercase, subtle text color, 4px above the proof body.",
+          "$value": {
+            "fontFamily": "Doto",
+            "fontWeight": 800,
+            "fontSize": {
+              "value": 13,
+              "unit": "px"
+            },
+            "lineHeight": 1.55,
+            "letterSpacing": {
+              "value": 0.78,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "ExtraBold",
+              "lineHeightPx": 20.15,
+              "leadingTrim": "NONE",
+              "textCase": "UPPER"
+            }
+          }
         }
       },
       "body": {
