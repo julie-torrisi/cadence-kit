@@ -20,6 +20,8 @@ tokens/                 Source of truth, DTCG JSON, one file per Figma collectio
 dist/
   css/cadence-kit.css        CSS custom properties + text style classes
   json/<brand>-<platform>-<theme>.json   12 flat files, every token fully resolved
+motion/
+  cadence-motion.css/.js     Motion runtime: reveals, steps, scroll scenes, pager, video loops, toast (see motion/README.md)
 scripts/build.mjs       Rebuilds dist/ from tokens/ (no dependencies)
 ```
 
@@ -151,6 +153,8 @@ Section numbers in a title kicker (`01 · …`) always use pixel-serif emphasis 
 ```
 
 ## Haptics
+
+Motion on the page comes from the runtime in [`motion/`](motion/README.md), which reads only these tokens.
 
 Haptic guidance lives in `tokens/motion/motion-haptics.json` and the resolved JSON (it isn't CSS). Errors map to `UINotificationFeedbackGenerator .error` on iOS and `HapticFeedbackConstants.REJECT` on Android, success to `.success` / `CONFIRM`, presses to `UIImpactFeedbackGenerator .light` / `CLICK`. Status, activity, tips, announcements and all web surfaces use no haptics, and push haptics are left to the OS.
 
