@@ -103,8 +103,28 @@ The build fails on any broken or circular reference.
 | Serif statements, title kickers | [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) | SIL Open Font License |
 | Headlines, body | [Inter](https://fonts.google.com/specimen/Inter) | SIL Open Font License |
 | Status, code | [Geist Mono](https://fonts.google.com/specimen/Geist+Mono) | SIL Open Font License |
+| Slides (pixel serif) | [Redaction](https://github.com/jeremymickel/Redaction), all 7 families | SIL Open Font License, bundled in `fonts/redaction/` |
 
-Fonts are not bundled; load them from Google Fonts or your own host.
+Doto, Instrument Serif, Inter and Geist Mono are not bundled; load them from Google Fonts or your own host. Redaction isn't on Google Fonts, so it ships here.
+
+### Redaction
+
+Seven families: `Redaction` is the clean drawing; `Redaction 10` through `Redaction 100` are optical sizes drawn through progressively degraded, bitmap-like forms. Each has Regular, Italic and Bold.
+
+**On the web:** load `dist/css/fonts.css` next to the token CSS, then use the family name.
+
+```html
+<link rel="stylesheet" href="dist/css/fonts.css">
+<link rel="stylesheet" href="dist/css/cadence-kit.css">
+```
+
+**In Figma (Mac):** Figma only sees fonts installed on your computer. Run this once in Terminal, then quit Figma (Cmd+Q) and reopen it:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/julie-torrisi/cadence-kit/main/cadence-kit/scripts/install-fonts-mac.sh | sh
+```
+
+Or install by hand: double-click each `.otf` in `fonts/redaction/otf/` and choose **Install**.
 
 ### Serif patterns
 

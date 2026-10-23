@@ -9,3 +9,8 @@ tokens are original to Cadence Kit.
 
 Fonts referenced by these tokens (Doto, Inter, Geist Mono, Lora) are licensed
 under the SIL Open Font License 1.1 and are not distributed with this project.
+
+Redaction (fonts/redaction/) is distributed with this project, unmodified,
+under the SIL Open Font License 1.1. Copyright 2019 The Redaction Project
+Authors (https://github.com/jeremymickel/Redaction). The full license is in
+fonts/redaction/OFL.txt. The MIT license above does not apply to these fonts.

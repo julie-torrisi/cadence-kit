@@ -1,0 +1,151 @@
+/* Redaction (SIL OFL 1.1) by Jeremy Mickel / MCKL. See fonts/redaction/OFL.txt.
+   Base family = clean drawing; numbered families = progressively bitmap-degraded optical sizes.
+   Import once, then use the family names below (e.g. font-family: "Redaction 50"). */
+
+@font-face {
+  font-family: "Redaction";
+  src: url("../../fonts/redaction/woff2/Redaction-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction";
+  src: url("../../fonts/redaction/woff2/Redaction-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction";
+  src: url("../../fonts/redaction/woff2/Redaction-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 10";
+  src: url("../../fonts/redaction/woff2/Redaction10-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 10";
+  src: url("../../fonts/redaction/woff2/Redaction10-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 10";
+  src: url("../../fonts/redaction/woff2/Redaction10-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 20";
+  src: url("../../fonts/redaction/woff2/Redaction20-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 20";
+  src: url("../../fonts/redaction/woff2/Redaction20-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 20";
+  src: url("../../fonts/redaction/woff2/Redaction20-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 35";
+  src: url("../../fonts/redaction/woff2/Redaction35-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 35";
+  src: url("../../fonts/redaction/woff2/Redaction35-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 35";
+  src: url("../../fonts/redaction/woff2/Redaction35-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 50";
+  src: url("../../fonts/redaction/woff2/Redaction50-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 50";
+  src: url("../../fonts/redaction/woff2/Redaction50-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 50";
+  src: url("../../fonts/redaction/woff2/Redaction50-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 70";
+  src: url("../../fonts/redaction/woff2/Redaction70-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 70";
+  src: url("../../fonts/redaction/woff2/Redaction70-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 70";
+  src: url("../../fonts/redaction/woff2/Redaction70-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 100";
+  src: url("../../fonts/redaction/woff2/Redaction100-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 100";
+  src: url("../../fonts/redaction/woff2/Redaction100-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Redaction 100";
+  src: url("../../fonts/redaction/woff2/Redaction100-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}

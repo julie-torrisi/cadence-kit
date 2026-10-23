@@ -9,9 +9,10 @@
     "url": "git+https://github.com/julie-torrisi/cadence-kit.git"
   },
   "type": "module",
-  "files": ["tokens", "dist", "NOTICE"],
+  "files": ["tokens", "dist", "fonts", "NOTICE"],
   "exports": {
     "./css": "./dist/css/cadence-kit.css",
+    "./fonts.css": "./dist/css/fonts.css",
     "./json/*": "./dist/json/*.json",
     "./tokens/*": "./tokens/*"
   },
