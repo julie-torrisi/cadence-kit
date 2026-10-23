@@ -2,7 +2,7 @@
 
 Design tokens for **Cadence Kit**, the dot-matrix communications kit behind [Cadence](https://github.com/julie-torrisi/cadence-site), a Figma plugin that teaches AI your design system.
 
-The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the same 503 variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
+The kit covers the surfaces a brand uses to talk to its users (push, banner, toast, modal, hero, input, button) across **Web, iOS and Android**, in **light and dark**. These tokens are the variables that drive the Figma file, exported to the [W3C Design Tokens (DTCG)](https://www.designtokens.org/) format, plus ready-to-use CSS and resolved JSON.
 
 ## What's inside
 
@@ -12,7 +12,7 @@ tokens/                 Source of truth, DTCG JSON, one file per Figma collectio
   brand/cadence.json         Brands: Cadence palette, role colors, type, shape
   brand/sample.json          Brands: a second brand to show the system re-skins
   platform/web|ios|android   Platform: type scale, spacing, grid, touch targets, text pairings
-  theme/light|dark.json      Modes: light/dark color mapping
+  theme/light|dark.json      Modes: light/dark color mapping, plus asset.* placeholder slots (illustration, photography, motion)
   semantic/alias.json        Alias: the consumption layer — use these in product code
   component/components.json  Components: push, banner, modal, toast, button, input, loader, icon
   motion/motion-haptics.json Motion & Haptics: durations, easing, reduce-motion, haptic mapping
@@ -37,7 +37,7 @@ Platform     space.md, target.min       (Web | iOS | Android)
    ↓
 Brands       brand.color.role.main.primary.strong  (Cadence | Sample brand)
    ↓
-Primitives   brand.color.palette.red.500, scale.2xs
+Primitives   brand.color.palette.blue.500, scale.2xs
 ```
 
 | Axis | Modes | What changes |
@@ -77,7 +77,7 @@ Pick the combination you need from `dist/json/`, e.g. `cadence-android-dark.json
 
 ```json
 {
-  "component.button.primary.background": "#d71921",
+  "component.button.primary.background": "#3a6fcb",
   "component.button.height": "48px",
   "typescale.fontSize.body.short": "16px"
 }

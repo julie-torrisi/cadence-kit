@@ -23,18 +23,18 @@
   --ck-brand-shape-md: 12px;
   --ck-brand-shape-lg: 20px;
   --ck-brand-shape-none: 0;
-  --ck-brand-color-role-main-primary-lightest: var(--ck-brand-color-palette-red-50);
-  --ck-brand-color-role-main-primary-light: var(--ck-brand-color-palette-red-100);
-  --ck-brand-color-role-main-primary-medium: var(--ck-brand-color-palette-red-300);
-  --ck-brand-color-role-main-primary-strong: var(--ck-brand-color-palette-red-500);
-  --ck-brand-color-role-main-primary-bold: var(--ck-brand-color-palette-red-700);
-  --ck-brand-color-role-main-primary-dark: var(--ck-brand-color-palette-red-900);
-  --ck-brand-color-role-main-secondary-lightest: var(--ck-brand-color-palette-neutral-50);
-  --ck-brand-color-role-main-secondary-light: var(--ck-brand-color-palette-neutral-100);
-  --ck-brand-color-role-main-secondary-medium: var(--ck-brand-color-palette-neutral-400);
-  --ck-brand-color-role-main-secondary-strong: var(--ck-brand-color-palette-neutral-600);
-  --ck-brand-color-role-main-secondary-bold: var(--ck-brand-color-palette-neutral-800);
-  --ck-brand-color-role-main-secondary-dark: var(--ck-brand-color-palette-neutral-950);
+  --ck-brand-color-role-main-primary-lightest: var(--ck-brand-color-palette-blue-50);
+  --ck-brand-color-role-main-primary-light: var(--ck-brand-color-palette-blue-100);
+  --ck-brand-color-role-main-primary-medium: var(--ck-brand-color-palette-blue-300);
+  --ck-brand-color-role-main-primary-strong: var(--ck-brand-color-palette-blue-500);
+  --ck-brand-color-role-main-primary-bold: var(--ck-brand-color-palette-blue-700);
+  --ck-brand-color-role-main-primary-dark: var(--ck-brand-color-palette-blue-900);
+  --ck-brand-color-role-main-secondary-lightest: var(--ck-brand-color-palette-lilac-50);
+  --ck-brand-color-role-main-secondary-light: var(--ck-brand-color-palette-lilac-100);
+  --ck-brand-color-role-main-secondary-medium: var(--ck-brand-color-palette-lilac-300);
+  --ck-brand-color-role-main-secondary-strong: var(--ck-brand-color-palette-lilac-500);
+  --ck-brand-color-role-main-secondary-bold: var(--ck-brand-color-palette-lilac-700);
+  --ck-brand-color-role-main-secondary-dark: var(--ck-brand-color-palette-lilac-900);
   --ck-brand-color-role-intent-success-lightest: var(--ck-brand-color-palette-green-50);
   --ck-brand-color-role-intent-success-light: var(--ck-brand-color-palette-green-100);
   --ck-brand-color-role-intent-success-medium: var(--ck-brand-color-palette-green-300);
@@ -87,16 +87,16 @@
   --ck-brand-color-palette-mint-700: #19544b;
   --ck-brand-color-palette-mint-800: #174039;
   --ck-brand-color-palette-mint-900: #142c28;
-  --ck-brand-color-palette-blue-50: #f6fbfd;
-  --ck-brand-color-palette-blue-100: #e0f0f9;
+  --ck-brand-color-palette-blue-50: #eaf1fc;
+  --ck-brand-color-palette-blue-100: #c4d7f6;
   --ck-brand-color-palette-blue-200: #b1dbef;
-  --ck-brand-color-palette-blue-300: #84c5e6;
+  --ck-brand-color-palette-blue-300: #6f9cff;
   --ck-brand-color-palette-blue-400: #53afdc;
-  --ck-brand-color-palette-blue-500: #1993d0;
+  --ck-brand-color-palette-blue-500: #3a6fcb;
   --ck-brand-color-palette-blue-600: #0077b2;
-  --ck-brand-color-palette-blue-700: #006596;
+  --ck-brand-color-palette-blue-700: #24489a;
   --ck-brand-color-palette-blue-800: #005179;
-  --ck-brand-color-palette-blue-900: #003c5a;
+  --ck-brand-color-palette-blue-900: #0a1a38;
   --ck-brand-color-palette-violet-50: #fcfcfe;
   --ck-brand-color-palette-violet-100: #ecedfa;
   --ck-brand-color-palette-violet-200: #d0d2f3;
@@ -137,6 +137,7 @@
   --ck-brand-color-palette-yellow-700: #7a5a00;
   --ck-brand-color-palette-yellow-800: #574000;
   --ck-brand-color-palette-yellow-900: #3a2b00;
+  --ck-brand-color-palette-neutral-0: #ffffff;
   --ck-brand-color-palette-neutral-50: #f7f8f8;
   --ck-brand-color-palette-neutral-100: #eef0ef;
   --ck-brand-color-palette-neutral-200: #e1e4e3;
@@ -148,6 +149,24 @@
   --ck-brand-color-palette-neutral-800: #262a29;
   --ck-brand-color-palette-neutral-900: #161918;
   --ck-brand-color-palette-neutral-950: #0b0c0c;
+  --ck-brand-color-palette-lilac-50: #f3eef8;
+  --ck-brand-color-palette-lilac-100: #dccdeb;
+  --ck-brand-color-palette-lilac-300: #c893e6;
+  --ck-brand-color-palette-lilac-500: #7e5ca3;
+  --ck-brand-color-palette-lilac-700: #5a3f78;
+  --ck-brand-color-palette-lilac-900: #2a1d3a;
+  --ck-brand-color-palette-silk-void: #000003;
+  --ck-brand-color-palette-silk-navy-950: #05091e;
+  --ck-brand-color-palette-silk-navy-900: #0d1a3b;
+  --ck-brand-color-palette-silk-navy-800: #1c2337;
+  --ck-brand-color-palette-silk-sheen: #414a7c;
+  --ck-brand-color-palette-silk-peach: #ac9a8b;
+  --ck-brand-color-palette-silk-rose: #60353f;
+  --ck-brand-color-palette-silk-mist: #b0b0c2;
+  --ck-brand-color-palette-silk-dusk: #7c7c96;
+  --ck-brand-color-palette-silk-plum: #181322;
+  --ck-brand-color-palette-silk-mauve: #645558;
+  --ck-brand-color-palette-silk-clay: #806b6d;
   --ck-brand-font-family-display: "Doto";
   --ck-brand-font-family-serif: "Instrument Serif";
   --ck-brand-font-family-content: "Inter";
@@ -319,8 +338,8 @@
   --ck-mode-intent-criticalHighEmphasis: var(--ck-brand-color-role-intent-critical-medium);
   --ck-mode-intent-criticalLowEmphasis: var(--ck-brand-color-role-intent-critical-light);
   --ck-mode-intent-onCritical: var(--ck-brand-color-role-intent-critical-dark);
-  --ck-mode-background-body: var(--ck-brand-color-role-neutral-light);
-  --ck-mode-background-highEmphasis: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-background-body: var(--ck-brand-color-palette-neutral-0);
+  --ck-mode-background-highEmphasis: var(--ck-brand-color-palette-neutral-0);
   --ck-mode-background-mediumEmphasis: var(--ck-brand-color-role-neutral-lighter);
   --ck-mode-background-lowEmphasis: var(--ck-brand-color-role-neutral-medium);
   --ck-mode-background-overlay: #0b0c0c8f;
@@ -343,9 +362,11 @@
   --ck-mode-border-focusOutline: var(--ck-brand-color-role-main-primary-strong);
   --ck-mode-icon-default: var(--ck-brand-color-role-neutral-darkest);
   --ck-mode-icon-hover: var(--ck-brand-color-role-main-primary-strong);
-  --ck-mode-icon-glow: #d7192159;
+  --ck-mode-icon-glow: #3a6fcb59;
   --ck-mode-icon-success: var(--ck-brand-color-role-intent-success-bold);
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-bold);
+  --ck-mode-board-background: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
   --ck-alias-borderWidth-xs: var(--ck-borderWidth-xs);
   --ck-alias-borderWidth-sm: var(--ck-borderWidth-sm);
   --ck-alias-borderWidth-md: var(--ck-borderWidth-md);
@@ -400,6 +421,8 @@
   --ck-alias-color-icon-glow: var(--ck-mode-icon-glow);
   --ck-alias-color-icon-success: var(--ck-mode-icon-success);
   --ck-alias-color-icon-critical: var(--ck-mode-icon-critical);
+  --ck-alias-color-board-background: var(--ck-mode-board-background);
+  --ck-alias-color-board-dot: var(--ck-mode-board-dot);
   --ck-alias-size-none: var(--ck-size-none);
   --ck-alias-size-3xs: var(--ck-size-3xs);
   --ck-alias-size-2xs: var(--ck-size-2xs);
@@ -426,6 +449,8 @@
   --ck-alias-grid-gutter: var(--ck-grid-gutter);
   --ck-alias-screen-maxWidth: var(--ck-screen-maxWidth);
   --ck-alias-screen-layout-paddingLeftRight: var(--ck-screen-layout-paddingLeftRight);
+  --ck-alias-board-pitch: 5px;
+  --ck-alias-board-dot: 4px;
   --ck-component-button-height: var(--ck-alias-size-target);
   --ck-component-button-paddingX: var(--ck-alias-space-md);
   --ck-component-button-radius: var(--ck-alias-radius-md);
@@ -518,9 +543,9 @@
     --ck-mode-background-lowEmphasis: var(--ck-brand-color-role-neutral-bold);
     --ck-mode-background-overlay: #000000a3;
     --ck-mode-background-inverted: var(--ck-brand-color-role-neutral-lightest);
-    --ck-mode-text-default: var(--ck-brand-color-role-neutral-lightest);
+    --ck-mode-text-default: var(--ck-brand-color-palette-silk-mist);
     --ck-mode-text-inverted: var(--ck-brand-color-role-neutral-dark);
-    --ck-mode-text-subtle: var(--ck-brand-color-role-neutral-medium);
+    --ck-mode-text-subtle: var(--ck-brand-color-palette-silk-dusk);
     --ck-mode-text-link: var(--ck-brand-color-role-main-primary-medium);
     --ck-mode-state-disable: var(--ck-brand-color-role-neutral-lighter);
     --ck-mode-state-onDisable: var(--ck-brand-color-role-neutral-strong);
@@ -531,9 +556,11 @@
     --ck-mode-border-focusOutline: var(--ck-brand-color-role-main-primary-medium);
     --ck-mode-icon-default: var(--ck-brand-color-role-neutral-medium);
     --ck-mode-icon-hover: var(--ck-brand-color-role-main-primary-medium);
-    --ck-mode-icon-glow: #ff5a6099;
+    --ck-mode-icon-glow: #6f9cff99;
     --ck-mode-icon-success: var(--ck-brand-color-role-intent-success-medium);
     --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-medium);
+    --ck-mode-board-background: var(--ck-brand-color-palette-silk-navy-950);
+    --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
   }
 }
 
@@ -558,9 +585,9 @@
   --ck-mode-background-lowEmphasis: var(--ck-brand-color-role-neutral-bold);
   --ck-mode-background-overlay: #000000a3;
   --ck-mode-background-inverted: var(--ck-brand-color-role-neutral-lightest);
-  --ck-mode-text-default: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-text-default: var(--ck-brand-color-palette-silk-mist);
   --ck-mode-text-inverted: var(--ck-brand-color-role-neutral-dark);
-  --ck-mode-text-subtle: var(--ck-brand-color-role-neutral-medium);
+  --ck-mode-text-subtle: var(--ck-brand-color-palette-silk-dusk);
   --ck-mode-text-link: var(--ck-brand-color-role-main-primary-medium);
   --ck-mode-state-disable: var(--ck-brand-color-role-neutral-lighter);
   --ck-mode-state-onDisable: var(--ck-brand-color-role-neutral-strong);
@@ -571,9 +598,11 @@
   --ck-mode-border-focusOutline: var(--ck-brand-color-role-main-primary-medium);
   --ck-mode-icon-default: var(--ck-brand-color-role-neutral-medium);
   --ck-mode-icon-hover: var(--ck-brand-color-role-main-primary-medium);
-  --ck-mode-icon-glow: #ff5a6099;
+  --ck-mode-icon-glow: #6f9cff99;
   --ck-mode-icon-success: var(--ck-brand-color-role-intent-success-medium);
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-medium);
+  --ck-mode-board-background: var(--ck-brand-color-palette-silk-navy-950);
+  --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
 }
 
 [data-theme="light"] {
@@ -591,8 +620,8 @@
   --ck-mode-intent-warningLowEmphasis: var(--ck-brand-color-role-intent-warning-light);
   --ck-mode-intent-criticalHighEmphasis: var(--ck-brand-color-role-intent-critical-medium);
   --ck-mode-intent-criticalLowEmphasis: var(--ck-brand-color-role-intent-critical-light);
-  --ck-mode-background-body: var(--ck-brand-color-role-neutral-light);
-  --ck-mode-background-highEmphasis: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-background-body: var(--ck-brand-color-palette-neutral-0);
+  --ck-mode-background-highEmphasis: var(--ck-brand-color-palette-neutral-0);
   --ck-mode-background-mediumEmphasis: var(--ck-brand-color-role-neutral-lighter);
   --ck-mode-background-lowEmphasis: var(--ck-brand-color-role-neutral-medium);
   --ck-mode-background-overlay: #0b0c0c8f;
@@ -610,9 +639,11 @@
   --ck-mode-border-focusOutline: var(--ck-brand-color-role-main-primary-strong);
   --ck-mode-icon-default: var(--ck-brand-color-role-neutral-darkest);
   --ck-mode-icon-hover: var(--ck-brand-color-role-main-primary-strong);
-  --ck-mode-icon-glow: #d7192159;
+  --ck-mode-icon-glow: #3a6fcb59;
   --ck-mode-icon-success: var(--ck-brand-color-role-intent-success-bold);
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-bold);
+  --ck-mode-board-background: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
 }
 
 [data-platform="ios"] {
@@ -674,16 +705,10 @@
   --ck-brand-color-palette-mint-700: #0f766e;
   --ck-brand-color-palette-mint-800: #115e59;
   --ck-brand-color-palette-mint-900: #042f2e;
-  --ck-brand-color-palette-blue-50: #eff6ff;
-  --ck-brand-color-palette-blue-100: #dbeafe;
   --ck-brand-color-palette-blue-200: #bfdbfe;
-  --ck-brand-color-palette-blue-300: #93c5fd;
   --ck-brand-color-palette-blue-400: #60a5fa;
-  --ck-brand-color-palette-blue-500: #3b82f6;
   --ck-brand-color-palette-blue-600: #2563eb;
-  --ck-brand-color-palette-blue-700: #1d4ed8;
   --ck-brand-color-palette-blue-800: #1e40af;
-  --ck-brand-color-palette-blue-900: #172554;
   --ck-brand-color-palette-violet-50: #faf5ff;
   --ck-brand-color-palette-violet-100: #f3e8ff;
   --ck-brand-color-palette-violet-200: #e9d5ff;

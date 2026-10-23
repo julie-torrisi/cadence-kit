@@ -152,7 +152,7 @@
     "text": {
       "default": {
         "$type": "color",
-        "$value": "{brand.color.role.neutral.lightest}",
+        "$value": "{brand.color.palette.silk.mist}",
         "$description": "default text color"
       },
       "inverted": {
@@ -162,7 +162,7 @@
       },
       "subtle": {
         "$type": "color",
-        "$value": "{brand.color.role.neutral.medium}",
+        "$value": "{brand.color.palette.silk.dusk}",
         "$description": "subtle text color"
       },
       "link": {
@@ -282,12 +282,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            0.3529,
-            0.3765
+            0.4353,
+            0.6118,
+            1.0
           ],
           "alpha": 0.6,
-          "hex": "#ff5a60"
+          "hex": "#6f9cff"
         },
         "$extensions": {
           "com.figma": {
@@ -320,6 +320,69 @@
             ]
           }
         }
+      }
+    },
+    "board": {
+      "background": {
+        "$type": "color",
+        "$value": "{brand.color.palette.silk.navy-950}"
+      },
+      "dot": {
+        "$type": "color",
+        "$value": "{brand.color.role.neutral.dark}"
+      }
+    }
+  },
+  "asset": {
+    "illustration": {
+      "1x1": {
+        "$type": "string",
+        "$value": "placeholder:illustration-1x1-dark",
+        "$description": "illustration slot, 1:1. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "4x3": {
+        "$type": "string",
+        "$value": "placeholder:illustration-4x3-dark",
+        "$description": "illustration slot, 4:3. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "16x9": {
+        "$type": "string",
+        "$value": "placeholder:illustration-16x9-dark",
+        "$description": "illustration slot, 16:9. Replace the placeholder with your brand asset (file or URL)."
+      }
+    },
+    "photography": {
+      "1x1": {
+        "$type": "string",
+        "$value": "placeholder:photography-1x1-dark",
+        "$description": "photography slot, 1:1. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "4x3": {
+        "$type": "string",
+        "$value": "placeholder:photography-4x3-dark",
+        "$description": "photography slot, 4:3. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "16x9": {
+        "$type": "string",
+        "$value": "placeholder:photography-16x9-dark",
+        "$description": "photography slot, 16:9. Replace the placeholder with your brand asset (file or URL)."
+      }
+    },
+    "motion": {
+      "1x1": {
+        "$type": "string",
+        "$value": "placeholder:motion-1x1-dark",
+        "$description": "motion slot, 1:1. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "4x3": {
+        "$type": "string",
+        "$value": "placeholder:motion-4x3-dark",
+        "$description": "motion slot, 4:3. Replace the placeholder with your brand asset (file or URL)."
+      },
+      "16x9": {
+        "$type": "string",
+        "$value": "placeholder:motion-16x9-dark",
+        "$description": "motion slot, 16:9. Replace the placeholder with your brand asset (file or URL)."
       }
     }
   }

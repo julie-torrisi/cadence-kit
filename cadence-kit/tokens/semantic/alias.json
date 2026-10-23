@@ -303,6 +303,18 @@
           "$type": "color",
           "$value": "{mode.icon.critical}"
         }
+      },
+      "board": {
+        "background": {
+          "$type": "color",
+          "$value": "{mode.board.background}",
+          "$description": "Dot Board stage"
+        },
+        "dot": {
+          "$type": "color",
+          "$value": "{mode.board.dot}",
+          "$description": "Dot Board idle dot"
+        }
       }
     },
     "size": {
@@ -417,6 +429,24 @@
           "$type": "dimension",
           "$value": "{screen.layout.paddingLeftRight}"
         }
+      }
+    },
+    "board": {
+      "pitch": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        },
+        "$description": "Dot Board grid pitch"
+      },
+      "dot": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Dot Board dot size"
       }
     }
   }
