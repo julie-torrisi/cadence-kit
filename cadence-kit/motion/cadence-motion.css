@@ -183,13 +183,53 @@ html[data-motion="reduce"] .cm-pager-pill, html[data-motion="reduce"] .cm-pager-
 .cm-media-ctl[hidden] { display: none !important; }
 
 /* Feedback: loader, toast, copy confirm (approved 10/23) */
-.cm-loader { display: inline-flex; gap: var(--ck-component-loader-gap, var(--ck-alias-space-2xs)); align-items: center; }
-.cm-loader i { width: var(--ck-alias-space-xs); height: var(--ck-alias-space-xs); border-radius: 999px; background: var(--ck-component-loader-dotIdle, var(--ck-alias-color-border-medium)); opacity: .3;
-  animation: cm-ldot calc(var(--ck-motion-duration-standard) * 3) var(--ck-motion-easing-standard) infinite; }
-.cm-loader i:nth-child(2) { animation-delay: var(--ck-motion-stagger); }
-.cm-loader i:nth-child(3) { animation-delay: calc(var(--ck-motion-stagger) * 2); }
-@keyframes cm-ldot { 0%, 100% { opacity: .3; transform: none; } 30% { opacity: 1; transform: translateY(calc(var(--ck-alias-space-3xs) * -1.5)); background: var(--ck-component-loader-dotActive, var(--ck-alias-color-primary-interaction)); } }
+/* Loader (approved 10/23, Motion Lab): three dot-matrix dots, each a 5 x 5 grid of tiny dots clipped to a circle,
+   same pitch as dot type. One dot lit at a time, stepped, opacity only, no bounce. */
+.cm-loader { --cm-mx-pitch: 3px; --cm-mx-size: calc(var(--cm-mx-pitch) * 5);
+  display: inline-flex; gap: calc(var(--cm-mx-pitch) * 2); align-items: center; color: var(--ck-component-loader-dotIdle, var(--ck-alias-color-border-medium)); }
+.cm-loader i { width: var(--cm-mx-size); height: var(--cm-mx-size); border-radius: 50%; opacity: .22;
+  background: radial-gradient(circle, currentColor 0.85px, transparent 1.15px) center / var(--cm-mx-pitch) var(--cm-mx-pitch);
+  animation: cm-mx-step calc(var(--ck-motion-duration-standard) * 3) steps(1, end) infinite; }
+.cm-loader i:nth-child(2) { animation-delay: var(--ck-motion-duration-standard); }
+.cm-loader i:nth-child(3) { animation-delay: calc(var(--ck-motion-duration-standard) * 2); }
+@keyframes cm-mx-step { 0% { opacity: 1; color: var(--ck-component-loader-dotActive, var(--ck-alias-color-primary-interaction)); } 33.4%, 100% { opacity: .22; } }
+/* Scan loader for waits over a few seconds: a 9 x 3 matrix, a lit column sweeps across. JS fills the cells. */
+.cm-loader-scan { display: inline-grid; grid-template-columns: repeat(9, 3px); grid-auto-rows: 3px; gap: 3px; align-content: center;
+  color: var(--ck-component-loader-dotActive, var(--ck-alias-color-primary-interaction)); }
+.cm-loader-scan i { width: 2px; height: 2px; border-radius: 50%; background: currentColor; opacity: .18;
+  animation: cm-mx-col calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: calc(var(--c, 0) * var(--ck-motion-stagger) * 2); }
+@keyframes cm-mx-col { 0%, 100% { opacity: .18; } 12% { opacity: 1; } 30% { opacity: .18; } }
 @keyframes cm-ldot-r { 0%, 100% { opacity: .3; } 50% { opacity: .8; } }
+
+/* Carousel (approved 10/23): every item shares one box as tall as the longest item, top-aligned, so the first line
+   never jumps. The new item travels distance.enter sideways in the paging direction; the old one only fades. */
+.cm-carousel-items { display: grid; }
+.cm-carousel-items > * { grid-area: 1 / 1; align-self: start; opacity: 0; visibility: hidden; }
+.cm-carousel-items > .is-active, .cm-carousel-items > .is-out { visibility: visible; }
+.cm-carousel-items > .is-active { opacity: 1; }
+.cm-carousel-items > .is-in { animation: cm-cx-in var(--ck-motion-duration-standard) var(--ck-motion-easing-enter) both; }
+.cm-carousel-items > .is-out { animation: cm-exit var(--ck-motion-duration-quick) var(--ck-motion-easing-exit) both; }
+@keyframes cm-cx-in { from { opacity: 0; transform: translate3d(calc(var(--cm-dir, 1) * var(--ck-motion-distance-enter)), 0, 0); } to { opacity: 1; transform: none; } }
+
+/* Pixel numbers (approved 10/23, locked as built in the master deck). */
+/* Chapter numeral: 5 x 9 cells fill in reading order; JS sets --cm-progress (0..1) from scroll. */
+.cm-numeral { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(9, 1fr); aspect-ratio: 5 / 9; pointer-events: none; }
+.cm-numeral i { background: var(--ck-builds-accent-signal, var(--ck-alias-color-primary-interaction));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--ck-builds-accent-signal, var(--ck-alias-color-primary-interaction)) 25%, transparent);
+  transition: opacity var(--ck-motion-duration-standard) var(--ck-motion-easing-enter), transform var(--ck-motion-duration-standard) var(--ck-motion-easing-enter); }
+.cm-numeral i.is-off { background: transparent; box-shadow: none; }
+.cm-numeral i.is-wait { opacity: 0; transform: scale(.4); }
+/* Metric number: glyphs clip up from the bottom in 6 hard steps, stagger per glyph, once. */
+.cm-pxnum { font-family: var(--ck-brand-font-family-pixel-bold, inherit); }
+.cm-pxnum .cm-px-g { display: inline-block; font-style: normal; clip-path: inset(100% 0 0 0); }
+.cm-pxnum.is-built .cm-px-g { animation: cm-px-build var(--ck-motion-duration-standard) steps(6, end) both; animation-delay: calc(var(--i, 0) * var(--ck-motion-stagger)); }
+@keyframes cm-px-build { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* Pixel type and labels (approved 10/23): accent words are the pixel cut, upright. Pill and button labels are optically centered. */
+.cm-pixel { font-family: var(--ck-brand-font-family-pixel, inherit); font-style: normal; }
+.cm-label-center { display: inline-flex; align-items: center; justify-content: center; line-height: 1.2; }
+@supports (text-box: trim-both cap alphabetic) { .cm-label-center { text-box: trim-both cap alphabetic; line-height: 1; } }
+
 .cm-toast {
   position: fixed; left: 50%; bottom: calc(var(--ck-alias-space-lg, 24px) + env(safe-area-inset-bottom, 0px)); z-index: 50;
   translate: -50% 0; pointer-events: none;
@@ -202,8 +242,14 @@ html[data-motion="reduce"] .cm-pager-pill, html[data-motion="reduce"] .cm-pager-
 .cm-toast.is-in { animation: cm-enter var(--ck-motion-duration-quick) var(--ck-motion-easing-enter) both; }
 .cm-toast.is-out { animation: cm-exit var(--ck-motion-duration-quick) var(--ck-motion-easing-exit) both; }
 @media (prefers-reduced-motion: reduce) {
-  .cm-loader i { animation-name: cm-ldot-r; animation-timing-function: linear; }
+  .cm-loader i, .cm-loader-scan i { animation: cm-ldot-r calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: 0s; }
+  .cm-carousel-items > .is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+  .cm-numeral i { transition: none; }
+  .cm-pxnum .cm-px-g { clip-path: none; animation: none !important; }
   .cm-toast.is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
 }
-html[data-motion="reduce"] .cm-loader i { animation-name: cm-ldot-r; animation-timing-function: linear; }
+html[data-motion="reduce"] .cm-loader i, html[data-motion="reduce"] .cm-loader-scan i { animation: cm-ldot-r calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: 0s; }
+html[data-motion="reduce"] .cm-carousel-items > .is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+html[data-motion="reduce"] .cm-numeral i { transition: none; }
+html[data-motion="reduce"] .cm-pxnum .cm-px-g { clip-path: none; animation: none !important; }
 html[data-motion="reduce"] .cm-toast.is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }

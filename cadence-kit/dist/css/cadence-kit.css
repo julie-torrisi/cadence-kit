@@ -91,7 +91,7 @@
   --ck-brand-color-palette-blue-100: #c4d7f6;
   --ck-brand-color-palette-blue-200: #b1dbef;
   --ck-brand-color-palette-blue-300: #6f9cff;
-  --ck-brand-color-palette-blue-400: #53afdc;
+  --ck-brand-color-palette-blue-400: #3783f9;
   --ck-brand-color-palette-blue-500: #3a6fcb;
   --ck-brand-color-palette-blue-600: #0077b2;
   --ck-brand-color-palette-blue-700: #24489a;
@@ -152,6 +152,7 @@
   --ck-brand-color-palette-lilac-50: #f3eef8;
   --ck-brand-color-palette-lilac-100: #dccdeb;
   --ck-brand-color-palette-lilac-300: #c893e6;
+  --ck-brand-color-palette-lilac-400: #ab6ffb;
   --ck-brand-color-palette-lilac-500: #7e5ca3;
   --ck-brand-color-palette-lilac-700: #5a3f78;
   --ck-brand-color-palette-lilac-900: #2a1d3a;
@@ -171,6 +172,9 @@
   --ck-brand-font-family-serif: "Instrument Serif";
   --ck-brand-font-family-content: "Inter";
   --ck-brand-font-family-code: "Geist Mono";
+  --ck-brand-font-family-slide: "Redaction";
+  --ck-brand-font-family-pixel: "Redaction 50";
+  --ck-brand-font-family-pixel-bold: "Redaction 70";
   --ck-brand-font-weight-black: 900;
   --ck-brand-font-weight-bold: 700;
   --ck-brand-font-weight-semiBold: 600;
@@ -536,14 +540,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ck-mode-primary-onInteraction: var(--ck-brand-color-role-neutral-lightest);
+    --ck-mode-primary-interaction: var(--ck-brand-color-palette-blue-400);
+    --ck-mode-primary-onInteraction: var(--ck-brand-color-palette-silk-navy-950);
     --ck-mode-primary-brand: var(--ck-brand-color-role-main-primary-medium);
     --ck-mode-primary-onBrand: var(--ck-brand-color-role-main-primary-dark);
-    --ck-mode-secondary-interaction: var(--ck-brand-color-role-neutral-strong);
-    --ck-mode-secondary-onInteraction: var(--ck-brand-color-role-neutral-lightest);
+    --ck-mode-secondary-interaction: var(--ck-brand-color-palette-lilac-400);
+    --ck-mode-secondary-onInteraction: var(--ck-brand-color-palette-silk-navy-950);
     --ck-mode-secondary-brand: var(--ck-brand-color-role-main-secondary-strong);
-    --ck-mode-intent-infoHighEmphasis: var(--ck-brand-color-role-intent-info-light);
+    --ck-mode-intent-infoHighEmphasis: var(--ck-brand-color-palette-neutral-50);
     --ck-mode-intent-infoLowEmphasis: var(--ck-brand-color-role-intent-info-medium);
+    --ck-mode-intent-onInfo: var(--ck-brand-color-palette-silk-navy-950);
     --ck-mode-intent-successHighEmphasis: var(--ck-brand-color-role-intent-success-light);
     --ck-mode-intent-successLowEmphasis: var(--ck-brand-color-role-intent-success-medium);
     --ck-mode-intent-warningHighEmphasis: var(--ck-brand-color-role-intent-warning-light);
@@ -578,14 +584,16 @@
 }
 
 [data-theme="dark"] {
-  --ck-mode-primary-onInteraction: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-primary-interaction: var(--ck-brand-color-palette-blue-400);
+  --ck-mode-primary-onInteraction: var(--ck-brand-color-palette-silk-navy-950);
   --ck-mode-primary-brand: var(--ck-brand-color-role-main-primary-medium);
   --ck-mode-primary-onBrand: var(--ck-brand-color-role-main-primary-dark);
-  --ck-mode-secondary-interaction: var(--ck-brand-color-role-neutral-strong);
-  --ck-mode-secondary-onInteraction: var(--ck-brand-color-role-neutral-lightest);
+  --ck-mode-secondary-interaction: var(--ck-brand-color-palette-lilac-400);
+  --ck-mode-secondary-onInteraction: var(--ck-brand-color-palette-silk-navy-950);
   --ck-mode-secondary-brand: var(--ck-brand-color-role-main-secondary-strong);
-  --ck-mode-intent-infoHighEmphasis: var(--ck-brand-color-role-intent-info-light);
+  --ck-mode-intent-infoHighEmphasis: var(--ck-brand-color-palette-neutral-50);
   --ck-mode-intent-infoLowEmphasis: var(--ck-brand-color-role-intent-info-medium);
+  --ck-mode-intent-onInfo: var(--ck-brand-color-palette-silk-navy-950);
   --ck-mode-intent-successHighEmphasis: var(--ck-brand-color-role-intent-success-light);
   --ck-mode-intent-successLowEmphasis: var(--ck-brand-color-role-intent-success-medium);
   --ck-mode-intent-warningHighEmphasis: var(--ck-brand-color-role-intent-warning-light);
@@ -619,6 +627,7 @@
 }
 
 [data-theme="light"] {
+  --ck-mode-primary-interaction: var(--ck-brand-color-role-main-primary-strong);
   --ck-mode-primary-onInteraction: var(--ck-brand-color-role-main-primary-lightest);
   --ck-mode-primary-brand: var(--ck-brand-color-role-main-primary-bold);
   --ck-mode-primary-onBrand: var(--ck-brand-color-role-main-primary-light);
@@ -627,6 +636,7 @@
   --ck-mode-secondary-brand: var(--ck-brand-color-role-main-secondary-bold);
   --ck-mode-intent-infoHighEmphasis: var(--ck-brand-color-role-intent-info-medium);
   --ck-mode-intent-infoLowEmphasis: var(--ck-brand-color-role-intent-info-light);
+  --ck-mode-intent-onInfo: var(--ck-brand-color-role-intent-info-dark);
   --ck-mode-intent-successHighEmphasis: var(--ck-brand-color-role-intent-success-medium);
   --ck-mode-intent-successLowEmphasis: var(--ck-brand-color-role-intent-success-light);
   --ck-mode-intent-warningHighEmphasis: var(--ck-brand-color-role-intent-warning-medium);
@@ -776,6 +786,9 @@
   --ck-brand-font-family-display: "Lora";
   --ck-brand-font-family-serif: "Lora";
   --ck-brand-font-family-content: "Lora";
+  --ck-brand-font-family-slide: "Lora";
+  --ck-brand-font-family-pixel: "Lora";
+  --ck-brand-font-family-pixel-bold: "Lora";
 }
 
 /* Text styles */

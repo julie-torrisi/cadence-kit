@@ -95,6 +95,7 @@
     ticking = true;
     requestAnimationFrame(function () {
       scenes.forEach(function (s) { s.update(false); });
+      updateNumerals();
       ticking = false;
     });
   }
@@ -336,12 +337,77 @@
     try { navigator.clipboard.writeText(text).then(done, done); } catch (e) { done(); }
   }
 
+  /* Carousel (approved 10/23): items share one top-aligned box; travel is sideways in the paging direction only.
+     Use with a pager: CadenceMotion.carousel(itemsEl) returns show(n, dir). */
+  function carousel(itemsEl) {
+    return function show(n, dir) {
+      var all = itemsEl.children, prev = itemsEl.querySelector('.is-active'), next = all[n];
+      if (!next || prev === next) return;
+      [prev, next].forEach(function (el) { if (el) el.classList.remove('is-in', 'is-out'); });
+      if (prev) { prev.classList.remove('is-active'); prev.classList.add('is-out');
+        prev.addEventListener('animationend', function d() { prev.classList.remove('is-out'); prev.removeEventListener('animationend', d); }); }
+      next.style.setProperty('--cm-dir', dir < 0 ? -1 : 1);
+      next.classList.add('is-active', 'is-in');
+      next.addEventListener('animationend', function d() { next.classList.remove('is-in'); next.removeEventListener('animationend', d); });
+    };
+  }
+
+  /* Pixel numbers (approved 10/23, locked as built in the master deck). */
+  var NUMERALS = {
+    1: ['..#..', '.##..', '#.#..', '..#..', '..#..', '..#..', '..#..', '..#..', '#####'],
+    2: ['.###.', '#...#', '....#', '...#.', '..#..', '.#...', '#....', '#....', '#####'],
+    3: ['####.', '....#', '....#', '...#.', '.##..', '...#.', '....#', '....#', '####.']
+  };
+  /* Chapter numeral: <div class="cm-numeral" data-numeral="2"></div>. Scrubbed by its section's scroll, 40% to 85%. */
+  var numerals = [];
+  function initNumerals(root) {
+    root.querySelectorAll('[data-numeral]').forEach(function (n) {
+      if (n.__cm) return; n.__cm = true;
+      var d = NUMERALS[n.dataset.numeral] || NUMERALS[1];
+      n.classList.add('cm-numeral'); n.setAttribute('role', 'img'); n.setAttribute('aria-label', n.dataset.numeral);
+      d.forEach(function (r) { r.split('').forEach(function (ch) { var i = document.createElement('i'); if (ch !== '#') i.className = 'is-off'; n.appendChild(i); }); });
+      numerals.push({ el: n, cells: n.querySelectorAll('i:not(.is-off)'), host: n.closest('section') || n.parentElement });
+    });
+    updateNumerals();
+  }
+  function updateNumerals() {
+    var vh = window.innerHeight;
+    numerals.forEach(function (o) {
+      var r = o.host.getBoundingClientRect(), travel = Math.max(1, r.height - vh);
+      var p = reduced() ? 1 : clamp((clamp(-r.top / travel) - 0.4) / 0.45);
+      var shown = Math.round(p * o.cells.length);
+      o.cells.forEach(function (c, k) { c.classList.toggle('is-wait', k >= shown); });
+    });
+  }
+  /* Metric number: <span class="cm-pxnum" data-pxnum>78%</span>. Builds once when 60% visible. */
+  function initPxNums(root) {
+    var els = root.querySelectorAll('[data-pxnum]:not(.is-built)');
+    els.forEach(function (n) {
+      if (n.__cm) return; n.__cm = true;
+      var t = n.textContent; n.setAttribute('aria-label', t); n.textContent = '';
+      t.split('').forEach(function (ch, k) { var g = document.createElement('i'); g.className = 'cm-px-g'; g.style.setProperty('--i', k); g.setAttribute('aria-hidden', 'true'); g.textContent = ch; n.appendChild(g); });
+    });
+    if (!('IntersectionObserver' in window)) { els.forEach(function (n) { n.classList.add('is-built'); }); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-built'); io.unobserve(e.target); } }); }, { threshold: 0.6 });
+    els.forEach(function (n) { io.observe(n); });
+  }
+  /* Scan loader cells: <span class="cm-loader-scan"></span> */
+  function initScan(root) {
+    root.querySelectorAll('.cm-loader-scan:empty').forEach(function (el) {
+      var h = ''; for (var r = 0; r < 3; r++) for (var c = 0; c < 9; c++) h += '<i style="--c:' + c + '"></i>';
+      el.innerHTML = h; el.setAttribute('role', el.getAttribute('role') || 'img'); if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'Loading');
+    });
+  }
+
   function refresh(root) {
     root = root || document;
     initReveals(root);
     initScenes(root);
     initAmbient(root);
     initMedia(root);
+    initNumerals(root);
+    initPxNums(root);
+    initScan(root);
   }
 
   function boot() {
@@ -351,7 +417,7 @@
     if (mq && mq.addEventListener) mq.addEventListener('change', function () { refresh(document); onScroll(); });
   }
 
-  window.CadenceMotion = { step: step, reduced: reduced, refresh: refresh, update: onScroll, pager: pager, toast: toast, copied: copied };
+  window.CadenceMotion = { step: step, reduced: reduced, refresh: refresh, update: onScroll, pager: pager, toast: toast, copied: copied, carousel: carousel };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();

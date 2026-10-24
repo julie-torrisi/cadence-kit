@@ -530,12 +530,13 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.3255,
-                0.6863,
-                0.8627
+                0.2157,
+                0.5137,
+                0.9765
               ],
-              "hex": "#53afdc"
-            }
+              "hex": "#3783f9"
+            },
+            "$description": "interaction blue, tuned on screen (approved 2026-10-23)"
           },
           "500": {
             "$type": "color",
@@ -1269,6 +1270,19 @@
               "hex": "#c893e6"
             }
           },
+          "400": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.6706,
+                0.4353,
+                0.9843
+              ],
+              "hex": "#ab6ffb"
+            },
+            "$description": "interaction lilac, tuned on screen (approved 2026-10-23)"
+          },
           "500": {
             "$type": "color",
             "$value": {
@@ -1474,6 +1488,21 @@
         "code": {
           "$type": "fontFamily",
           "$value": "Geist Mono"
+        },
+        "slide": {
+          "$type": "fontFamily",
+          "$value": "Redaction",
+          "$description": "slide display font: full lines from 96px"
+        },
+        "pixel": {
+          "$type": "fontFamily",
+          "$value": "Redaction 50",
+          "$description": "pixel accent words (blue and lilac) from 24px, upright, never italic"
+        },
+        "pixel-bold": {
+          "$type": "fontFamily",
+          "$value": "Redaction 70",
+          "$description": "pixel display for 96px and up: title slides, metric numbers"
         }
       },
       "weight": {

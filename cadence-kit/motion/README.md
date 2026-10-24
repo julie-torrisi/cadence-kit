@@ -26,7 +26,13 @@ Load `cadence-kit.css` first. The runtime has no dependencies and works with no 
 | Ambient loop | `data-ambient`, pause button `data-motion-toggle` | `duration.ambient` (24s); pauses offscreen |
 | Pagination | `CadenceMotion.pager(host, { count, labels, noun, orientation, autoplay, onChange })` | `component.pager.*`; autoplay holds `duration.dwell` (6s) with a visible pause |
 | Video loop | `<video data-loop muted loop playsinline poster="…">` | visible pause, pauses offscreen, poster under reduced motion |
-| Loader | `<span class="cm-loader"><i></i><i></i><i></i></span>` | steps by `stagger` |
+| Loader | `<span class="cm-loader"><i></i><i></i><i></i></span>` | dot-matrix dots, one lit at a time, each holds `duration.standard` |
+| Long-wait loader | `<span class="cm-loader-scan"></span>` | 9 × 3 matrix, a lit column sweeps across |
+| Carousel | `.cm-carousel-items` with `.is-active` on one child; `CadenceMotion.carousel(itemsEl)(n, dir)` from a pager's `onChange` | top-aligned shared box; enters sideways in the paging direction, exits by fading |
+| Chapter numeral | `<div data-numeral="2"></div>` inside its chapter section | 5 × 9 cells fill as the section scrolls from 40% to 85%; `duration.standard`, `easing.enter` |
+| Metric number | `<span class="cm-pxnum" data-pxnum>78%</span>` | glyphs build in `steps(6)`, `stagger` apart, once at 60% visible |
+| Pixel accent word | `<span class="cm-pixel">earns</span>` | `brand.font.family.pixel` (Redaction 50), upright |
+| Centered label | `.cm-label-center` on pills and buttons | cap-height trim where supported |
 | Toast | `CadenceMotion.toast("Draft saved")` | in/out `quick`, holds `duration.hold` (4s) |
 | Copy confirm | `CadenceMotion.copied(button, text)` | "Copied" for half of `duration.hold` (2s) |
 
