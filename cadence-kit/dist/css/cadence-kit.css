@@ -509,16 +509,29 @@
   --ck-component-icon-success: var(--ck-alias-color-icon-success);
   --ck-component-icon-critical: var(--ck-alias-color-icon-critical);
   --ck-component-icon-dimOpacity: 30;
+  --ck-component-pager-slot: var(--ck-alias-size-sm);
+  --ck-component-pager-dotSize: var(--ck-alias-space-xs);
+  --ck-component-pager-pillLength: var(--ck-alias-size-xs);
+  --ck-component-pager-target: var(--ck-alias-size-target);
+  --ck-component-pager-dotIdle: var(--ck-alias-color-border-medium);
+  --ck-component-pager-dotActive: var(--ck-alias-color-primary-interaction);
+  --ck-component-pager-text: var(--ck-alias-color-text-subtle);
   --ck-motion-duration-step: 50ms;
   --ck-motion-duration-instant: 100ms;
   --ck-motion-duration-quick: 200ms;
   --ck-motion-duration-standard: 300ms;
   --ck-motion-duration-slow: 500ms;
+  --ck-motion-duration-reduced: 150ms;
+  --ck-motion-duration-cinematic: 800ms;
+  --ck-motion-duration-ambient: 24000ms;
+  --ck-motion-duration-dwell: 6000ms;
+  --ck-motion-duration-hold: 4000ms;
   --ck-motion-distance-enter: 8px;
   --ck-motion-stagger: 40ms;
   --ck-motion-easing-enter: cubic-bezier(0.2, 0, 0, 1);
   --ck-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
   --ck-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ck-motion-scroll-scene: 300vh;
 }
 
 @media (prefers-color-scheme: dark) {

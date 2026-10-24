@@ -35,6 +35,41 @@
           "value": 500,
           "unit": "ms"
         }
+      },
+      "reduced": {
+        "$type": "duration",
+        "$value": {
+          "value": 150,
+          "unit": "ms"
+        }
+      },
+      "cinematic": {
+        "$type": "duration",
+        "$value": {
+          "value": 800,
+          "unit": "ms"
+        }
+      },
+      "ambient": {
+        "$type": "duration",
+        "$value": {
+          "value": 24000,
+          "unit": "ms"
+        }
+      },
+      "dwell": {
+        "$type": "duration",
+        "$value": {
+          "value": 6000,
+          "unit": "ms"
+        }
+      },
+      "hold": {
+        "$type": "duration",
+        "$value": {
+          "value": 4000,
+          "unit": "ms"
+        }
       }
     },
     "distance": {
@@ -85,6 +120,15 @@
     "reduceMotion": {
       "$type": "string",
       "$value": "fade, 150ms, no movement"
+    },
+    "scroll": {
+      "scene": {
+        "$type": "dimension",
+        "$value": {
+          "value": 300,
+          "unit": "vh"
+        }
+      }
     }
   },
   "haptic": {
@@ -135,6 +179,20 @@
     "push": {
       "$type": "string",
       "$value": "OS-controlled; do not spec"
+    }
+  },
+  "sound": {
+    "default": {
+      "$type": "string",
+      "$value": "none (web, slides, cover pages, plugin)"
+    },
+    "success": {
+      "$type": "string",
+      "$value": "system sound, native only, paired with haptic.success, muted in silent mode"
+    },
+    "error": {
+      "$type": "string",
+      "$value": "system sound, native only, paired with haptic.error, muted in silent mode"
     }
   }
 }

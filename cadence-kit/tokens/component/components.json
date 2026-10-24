@@ -267,6 +267,36 @@
         "$value": 30,
         "$description": "Opacity in percent for dimmed animation frames"
       }
+    },
+    "pager": {
+      "slot": {
+        "$type": "dimension",
+        "$value": "{alias.size.sm}"
+      },
+      "dotSize": {
+        "$type": "dimension",
+        "$value": "{alias.space.xs}"
+      },
+      "pillLength": {
+        "$type": "dimension",
+        "$value": "{alias.size.xs}"
+      },
+      "target": {
+        "$type": "dimension",
+        "$value": "{alias.size.target}"
+      },
+      "dotIdle": {
+        "$type": "color",
+        "$value": "{alias.color.border.medium}"
+      },
+      "dotActive": {
+        "$type": "color",
+        "$value": "{alias.color.primary.interaction}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{alias.color.text.subtle}"
+      }
     }
   }
 }
