@@ -3,12 +3,12 @@
     "primary": {
       "interaction": {
         "$type": "color",
-        "$value": "{brand.color.role.main.primary.strong}",
+        "$value": "{brand.color.palette.blue.400}",
         "$description": "color that indicates interactions"
       },
       "onInteraction": {
         "$type": "color",
-        "$value": "{brand.color.role.neutral.lightest}",
+        "$value": "{brand.color.palette.silk.navy-950}",
         "$description": "color for elements placed on interactive backgrounds"
       },
       "brand": {
@@ -25,12 +25,12 @@
     "secondary": {
       "interaction": {
         "$type": "color",
-        "$value": "{brand.color.role.neutral.strong}",
+        "$value": "{brand.color.palette.lilac.400}",
         "$description": "secondary interaction color for backgrounds"
       },
       "onInteraction": {
         "$type": "color",
-        "$value": "{brand.color.role.neutral.lightest}",
+        "$value": "{brand.color.palette.silk.navy-950}",
         "$description": "secondary foreground color for interactions"
       },
       "brand": {
@@ -47,7 +47,7 @@
     "intent": {
       "infoHighEmphasis": {
         "$type": "color",
-        "$value": "{brand.color.role.intent.info.light}"
+        "$value": "{brand.color.palette.neutral.50}"
       },
       "infoLowEmphasis": {
         "$type": "color",
@@ -55,7 +55,7 @@
       },
       "onInfo": {
         "$type": "color",
-        "$value": "{brand.color.role.intent.info.dark}"
+        "$value": "{brand.color.palette.silk.navy-950}"
       },
       "successHighEmphasis": {
         "$type": "color",

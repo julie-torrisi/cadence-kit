@@ -243,21 +243,22 @@
             "fontFamily": "Doto",
             "fontWeight": 800,
             "fontSize": {
-              "value": 13,
+              "value": 16,
               "unit": "px"
             },
-            "lineHeight": 1.55,
+            "lineHeight": 1.4,
             "letterSpacing": {
-              "value": 0.78,
+              "value": 0.96,
               "unit": "px"
             }
           },
           "$extensions": {
             "com.figma": {
               "style": "ExtraBold",
-              "lineHeightPx": 20.15,
+              "lineHeightPx": 22.4,
               "leadingTrim": "NONE",
-              "textCase": "UPPER"
+              "textCase": "UPPER",
+              "figmaStyle": "cover/label/step"
             }
           }
         }
@@ -744,6 +745,80 @@
               "style": "Regular",
               "lineHeightPx": 20,
               "leadingTrim": "CAP_HEIGHT"
+            }
+          }
+        }
+      },
+      "serif": {
+        "statement": {
+          "$type": "typography",
+          "$description": "Serif statement: big two-line hero lines. Accent word renders as pixel serif at display sizes only.",
+          "$value": {
+            "fontFamily": "Instrument Serif",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 96,
+              "unit": "px"
+            },
+            "lineHeight": 1.0,
+            "letterSpacing": {
+              "value": -0.96,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 96.0,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "subtitle": {
+          "$type": "typography",
+          "$description": "Serif subtitle under a Doto headline. Accent word renders as pixel serif.",
+          "$value": {
+            "fontFamily": "Instrument Serif",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 58,
+              "unit": "px"
+            },
+            "lineHeight": 1.04,
+            "letterSpacing": {
+              "value": -0.58,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 60.32,
+              "leadingTrim": "NONE"
+            }
+          }
+        },
+        "kicker": {
+          "$type": "typography",
+          "$description": "Serif title kicker after the dot > arrow. Section numbers render as pixel serif.",
+          "$value": {
+            "fontFamily": "Instrument Serif",
+            "fontWeight": 400,
+            "fontSize": {
+              "value": 45,
+              "unit": "px"
+            },
+            "lineHeight": 1.1,
+            "letterSpacing": {
+              "value": -0.45,
+              "unit": "px"
+            }
+          },
+          "$extensions": {
+            "com.figma": {
+              "style": "Regular",
+              "lineHeightPx": 49.5,
+              "leadingTrim": "NONE"
             }
           }
         }

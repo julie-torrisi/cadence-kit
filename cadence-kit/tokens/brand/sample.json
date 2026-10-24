@@ -1269,6 +1269,19 @@
               "hex": "#c893e6"
             }
           },
+          "400": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.6706,
+                0.4353,
+                0.9843
+              ],
+              "hex": "#ab6ffb"
+            },
+            "$description": "interaction lilac, tuned on screen (approved 2026-10-23)"
+          },
           "500": {
             "$type": "color",
             "$value": {
@@ -1474,6 +1487,21 @@
         "code": {
           "$type": "fontFamily",
           "$value": "Geist Mono"
+        },
+        "slide": {
+          "$type": "fontFamily",
+          "$value": "Lora",
+          "$description": "slide display font: full lines from 96px"
+        },
+        "pixel": {
+          "$type": "fontFamily",
+          "$value": "Lora",
+          "$description": "pixel accent words (blue and lilac) from 24px, upright, never italic"
+        },
+        "pixel-bold": {
+          "$type": "fontFamily",
+          "$value": "Lora",
+          "$description": "pixel display for 96px and up: title slides, metric numbers"
         }
       },
       "weight": {

@@ -20,6 +20,8 @@ tokens/                 Source of truth, DTCG JSON, one file per Figma collectio
 dist/
   css/cadence-kit.css        CSS custom properties + text style classes
   json/<brand>-<platform>-<theme>.json   12 flat files, every token fully resolved
+motion/
+  cadence-motion.css/.js     Motion runtime: reveals, steps, scroll scenes, pager, video loops, toast (see motion/README.md)
 scripts/build.mjs       Rebuilds dist/ from tokens/ (no dependencies)
 ```
 
@@ -128,7 +130,7 @@ Or install by hand: double-click each `.otf` in `fonts/redaction/otf/` and choos
 
 ### Serif patterns
 
-`--ck-brand-font-family-serif` drives two patterns that sit beside the dot type.
+`--ck-brand-font-family-serif` drives two patterns that sit beside the dot type. Three text styles carry the serif sizes: `.ck-pairing-serif-statement` (96px, line height 1), `.ck-pairing-serif-subtitle` (58px, 1.04) and `.ck-pairing-serif-kicker` (45px, 1.1), all at -1% tracking. Tokens: `textStyle.pairing.serif.*`.
 
 **Title kicker.** The short line above a title: a dot `>` arrow (drawn on the dot grid, so it never moves) followed by a serif label in the subtle text color. The label is nudged up so the arrow's point meets the middle of its capital letters: 4.5px on desktop, 5.5px under 1024px, 0 under 640px.
 
@@ -144,13 +146,15 @@ Or install by hand: double-click each `.otf` in `fonts/redaction/otf/` and choos
 
 Section numbers in a title kicker (`01 · …`) always use pixel-serif emphasis in the primary interaction color. The rest of the label stays smooth.
 
-**Proof label.** The small label above the evidence line in a step or card. Doto ExtraBold, 13px, uppercase, 0.78px tracking, in the subtle text color, sitting 4px above the proof copy. Token: `textStyle.font.label.proof`.
+**Proof label.** The small label above the evidence line in a step or card. Doto ExtraBold, 16px, line height 1.4, uppercase, 0.96px (6%) tracking, in the subtle text color, sitting 4px above the proof copy. Token: `textStyle.font.label.proof`.
 
 ```css
-.step .proof .k{display:block;margin-bottom:4px;font-family:Doto,monospace;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.step .proof .k{display:block;margin-bottom:4px;font-family:Doto,monospace;font-weight:800;font-size:16px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
 ```
 
 ## Haptics
+
+Motion on the page comes from the runtime in [`motion/`](motion/README.md), which reads only these tokens.
 
 Haptic guidance lives in `tokens/motion/motion-haptics.json` and the resolved JSON (it isn't CSS). Errors map to `UINotificationFeedbackGenerator .error` on iOS and `HapticFeedbackConstants.REJECT` on Android, success to `.success` / `CONFIRM`, presses to `UIImpactFeedbackGenerator .light` / `CLICK`. Status, activity, tips, announcements and all web surfaces use no haptics, and push haptics are left to the OS.
 

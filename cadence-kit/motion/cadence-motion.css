@@ -1,0 +1,255 @@
+/* Cadence motion runtime · rules: claude/motion-sound-haptics.md
+   Load after cadence-kit.css. Every value is a --ck-motion-* token.
+   Proposed tokens (SYSTEM GAPs) fall back to existing ones until approved. */
+
+:root {
+  --cm-reduced: var(--ck-motion-duration-reduced, var(--ck-motion-duration-instant));
+  --cm-cinematic: var(--ck-motion-duration-cinematic, var(--ck-motion-duration-slow));
+}
+
+/* B · Reveal: fades up once as it enters the viewport */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--ck-motion-distance-enter));
+  transition:
+    opacity var(--ck-motion-duration-standard) var(--ck-motion-easing-enter),
+    transform var(--ck-motion-duration-standard) var(--ck-motion-easing-enter);
+  transition-delay: calc(min(var(--i, 0), 6) * var(--ck-motion-stagger));
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+/* Act opener: the one cinematic moment per act */
+[data-reveal="cinematic"] {
+  transition-duration: var(--cm-cinematic);
+}
+
+/* Press feedback starts on pointer-down */
+[data-press] {
+  transition: transform var(--ck-motion-duration-instant) var(--ck-motion-easing-standard);
+}
+[data-press]:active { transform: scale(0.98); }
+
+/* Slides and flow steps: enter at standard, exit faster */
+[data-step] { transition-property: opacity, transform; }
+[data-step].is-entering {
+  animation: cm-enter var(--ck-motion-duration-standard) var(--ck-motion-easing-enter) both;
+}
+[data-step].is-leaving {
+  animation: cm-exit var(--ck-motion-duration-quick) var(--ck-motion-easing-exit) both;
+}
+@keyframes cm-enter {
+  from { opacity: 0; transform: translateY(var(--ck-motion-distance-enter)); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes cm-exit {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* A · Sticky scroll scene: JS sets --progress (0 to 1) on the section */
+[data-scene] {
+  position: relative;
+  height: var(--ck-motion-scroll-scene, 300vh); /* SYSTEM GAP 3: set per page until approved */
+}
+[data-scene-stage] {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+[data-scene] canvas { width: 100%; height: 100%; object-fit: contain; }
+
+/* E · Ambient: background loops pause offscreen or on request */
+[data-ambient] { animation-duration: var(--ck-motion-duration-ambient); }
+[data-ambient].is-paused,
+html.cm-ambient-paused [data-ambient] { animation-play-state: paused; }
+
+/* Reduced motion: meaning stays, movement goes */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { transform: none; transition: opacity var(--cm-reduced) var(--ck-motion-easing-standard); transition-delay: 0s; }
+  [data-step].is-entering { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+  [data-step].is-leaving  { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) both; }
+  [data-press]:active { transform: none; }
+  [data-ambient] { animation: none !important; }
+  [data-scene] { height: auto; }
+  [data-scene-stage] { position: static; height: auto; }
+}
+html[data-motion="reduce"] [data-reveal] { transform: none; transition: opacity var(--cm-reduced) var(--ck-motion-easing-standard); transition-delay: 0s; }
+html[data-motion="reduce"] [data-step].is-entering { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+html[data-motion="reduce"] [data-step].is-leaving  { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) both; }
+html[data-motion="reduce"] [data-press]:active { transform: none; }
+html[data-motion="reduce"] [data-ambient] { animation: none !important; }
+html[data-motion="reduce"] [data-scene] { height: auto; }
+html[data-motion="reduce"] [data-scene-stage] { position: static; height: auto; }
+
+/* Pager: one pagination component for decks, carousels and galleries.
+   Slots are a fixed pitch and a pill slides between them (transform only, no width animation).
+   Sizes and colors come from component.pager.* (approved 10/23), falling back to the same kit aliases. */
+.cm-pager {
+  --pg-slot: var(--ck-component-pager-slot, var(--ck-alias-size-sm));
+  --pg-dot: var(--ck-component-pager-dotSize, var(--ck-alias-space-xs));
+  --pg-pill: var(--ck-component-pager-pillLength, var(--ck-alias-size-xs));
+  --pg-target: var(--ck-component-pager-target, var(--ck-alias-size-target));
+  --pg-idle: var(--ck-component-pager-dotIdle, var(--ck-alias-color-border-medium));
+  --pg-active: var(--ck-component-pager-dotActive, var(--ck-alias-color-primary-interaction));
+  --pg-text: var(--ck-component-pager-text, var(--ck-alias-color-text-subtle));
+  display: inline-flex; align-items: center; gap: var(--ck-alias-space-xs);
+  color: var(--pg-text);
+}
+.cm-pager[data-orientation="vertical"] { flex-direction: column; }
+.cm-pager button {
+  appearance: none; background: none; border: 0; padding: 0; margin: 0; color: inherit; cursor: pointer;
+  border-radius: 999px;
+}
+.cm-pager [hidden] { display: none !important; }
+.cm-pager button:focus-visible { outline: 2px solid var(--ck-alias-color-border-focusOutline); outline-offset: 2px; }
+.cm-pager-arrow, .cm-pager-play {
+  width: var(--pg-target); height: var(--pg-target); display: grid; place-items: center;
+  transition: color var(--ck-motion-duration-quick) var(--ck-motion-easing-standard), transform var(--ck-motion-duration-instant) var(--ck-motion-easing-standard);
+}
+.cm-pager-arrow:hover, .cm-pager-play:hover { color: var(--ck-alias-color-text-default); }
+.cm-pager-arrow:active, .cm-pager-play:active { transform: scale(0.94); }
+.cm-pager-arrow[disabled] { opacity: .3; cursor: default; }
+.cm-pager svg { width: var(--ck-alias-size-2xs); height: var(--ck-alias-size-2xs); }
+.cm-pager-track { position: relative; display: flex; }
+.cm-pager[data-orientation="vertical"] .cm-pager-track { flex-direction: column; }
+.cm-pager-dot {
+  width: var(--pg-slot); height: var(--pg-target); display: grid; place-items: center; position: relative; z-index: 1;
+}
+.cm-pager[data-orientation="vertical"] .cm-pager-dot { width: var(--pg-target); height: var(--pg-slot); }
+.cm-pager-dot::before {
+  content: ""; width: var(--pg-dot); height: var(--pg-dot); border-radius: 999px; background: var(--pg-idle); opacity: .55;
+  transition: opacity var(--ck-motion-duration-quick) var(--ck-motion-easing-standard);
+}
+.cm-pager-dot:hover::before { opacity: 1; }
+.cm-pager-dot[aria-current="true"]::before { opacity: 0; }
+.cm-pager-pill {
+  position: absolute; left: 0; top: 50%; z-index: 0; pointer-events: none;
+  width: var(--pg-pill); height: var(--pg-dot); margin-top: calc(var(--pg-dot) / -2);
+  margin-left: calc((var(--pg-slot) - var(--pg-pill)) / 2);
+  border-radius: 999px; overflow: hidden;
+  background: color-mix(in srgb, var(--pg-active) 35%, transparent);
+  transform: translateX(calc(var(--pg-i, 0) * var(--pg-slot)));
+  transition: transform var(--ck-motion-duration-standard) var(--ck-motion-easing-enter);
+}
+.cm-pager[data-orientation="vertical"] .cm-pager-pill {
+  left: 50%; top: 0; width: var(--pg-dot); height: var(--pg-pill);
+  margin-top: calc((var(--pg-slot) - var(--pg-pill)) / 2); margin-left: calc(var(--pg-dot) / -2);
+  transform: translateY(calc(var(--pg-i, 0) * var(--pg-slot)));
+}
+.cm-pager-fill { position: absolute; inset: 0; background: var(--pg-active); transform-origin: left center; }
+.cm-pager[data-orientation="vertical"] .cm-pager-fill { transform-origin: center top; }
+.cm-pager.is-timed .cm-pager-fill { animation: cm-dwell var(--cm-dwell) linear both; }
+.cm-pager[data-orientation="vertical"].is-timed .cm-pager-fill { animation-name: cm-dwell-v; }
+.cm-pager.is-paused .cm-pager-fill { animation-play-state: paused; }
+@keyframes cm-dwell { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes cm-dwell-v { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.cm-pager-count {
+  font: var(--ck-brand-font-weight-medium) var(--ck-brand-font-size-3xs)/1 var(--ck-brand-font-family-code), ui-monospace, monospace;
+  letter-spacing: .06em; font-variant-numeric: tabular-nums; white-space: nowrap; padding-inline: var(--ck-alias-space-2xs);
+}
+.cm-pager-count b { color: var(--ck-alias-color-text-default); font-weight: inherit; }
+.cm-pager-label {
+  position: absolute; right: calc(100% + var(--ck-alias-space-xs)); top: 50%; transform: translateY(-50%);
+  white-space: nowrap; pointer-events: none; opacity: 0;
+  font: var(--ck-brand-font-weight-medium) var(--ck-brand-font-size-3xs)/1 var(--ck-brand-font-family-code), ui-monospace, monospace;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ck-alias-color-text-default);
+  transition: opacity var(--ck-motion-duration-quick) var(--ck-motion-easing-standard);
+}
+.cm-pager-dot:hover .cm-pager-label, .cm-pager-dot:focus-visible .cm-pager-label { opacity: 1; }
+/* More than 9 pages: no dots, a progress line under the counter */
+.cm-pager.is-compact .cm-pager-dot, .cm-pager.is-compact .cm-pager-pill { display: none; }
+.cm-pager-line { display: none; width: calc(var(--pg-slot) * 4); height: var(--ck-alias-space-3xs); border-radius: 999px; background: color-mix(in srgb, var(--pg-idle) 40%, transparent); overflow: hidden; }
+.cm-pager.is-compact .cm-pager-line { display: block; }
+.cm-pager-line i { display: block; height: 100%; background: var(--pg-active); transform-origin: left center; transform: scaleX(var(--pg-p, 0)); transition: transform var(--ck-motion-duration-standard) var(--ck-motion-easing-enter); }
+@media (prefers-reduced-motion: reduce) {
+  .cm-pager-pill, .cm-pager-line i { transition: none; }
+}
+html[data-motion="reduce"] .cm-pager-pill, html[data-motion="reduce"] .cm-pager-line i { transition: none; }
+
+/* Media loop: muted looping <video> with a visible pause (approved 10/23, WCAG 2.2.2) */
+.cm-media { position: relative; }
+.cm-media-ctl {
+  position: absolute; right: var(--ck-alias-space-xs); bottom: var(--ck-alias-space-xs);
+  width: var(--ck-alias-size-target); height: var(--ck-alias-size-target); display: grid; place-items: center;
+  border: 0; border-radius: 999px; padding: 0; cursor: pointer;
+  color: var(--ck-alias-color-text-default);
+  background: color-mix(in srgb, var(--ck-alias-color-background-body, #000) 65%, transparent);
+  transition: transform var(--ck-motion-duration-instant) var(--ck-motion-easing-standard);
+}
+.cm-media-ctl:active { transform: scale(0.94); }
+.cm-media-ctl:focus-visible { outline: 2px solid var(--ck-alias-color-border-focusOutline); outline-offset: 2px; }
+.cm-media-ctl svg { width: var(--ck-alias-size-2xs); height: var(--ck-alias-size-2xs); }
+.cm-media-ctl[hidden] { display: none !important; }
+
+/* Feedback: loader, toast, copy confirm (approved 10/23) */
+/* Loader (approved 10/23, Motion Lab): three dot-matrix dots, each a 5 x 5 grid of tiny dots clipped to a circle,
+   same pitch as dot type. One dot lit at a time, stepped, opacity only, no bounce. */
+.cm-loader { --cm-mx-pitch: 3px; --cm-mx-size: calc(var(--cm-mx-pitch) * 5);
+  display: inline-flex; gap: calc(var(--cm-mx-pitch) * 2); align-items: center; color: var(--ck-component-loader-dotIdle, var(--ck-alias-color-border-medium)); }
+.cm-loader i { width: var(--cm-mx-size); height: var(--cm-mx-size); border-radius: 50%; opacity: .22;
+  background: radial-gradient(circle, currentColor 0.85px, transparent 1.15px) center / var(--cm-mx-pitch) var(--cm-mx-pitch);
+  animation: cm-mx-step calc(var(--ck-motion-duration-standard) * 3) steps(1, end) infinite; }
+.cm-loader i:nth-child(2) { animation-delay: var(--ck-motion-duration-standard); }
+.cm-loader i:nth-child(3) { animation-delay: calc(var(--ck-motion-duration-standard) * 2); }
+@keyframes cm-mx-step { 0% { opacity: 1; color: var(--ck-component-loader-dotActive, var(--ck-alias-color-primary-interaction)); } 33.4%, 100% { opacity: .22; } }
+/* Scan loader for waits over a few seconds: a 9 x 3 matrix, a lit column sweeps across. JS fills the cells. */
+.cm-loader-scan { display: inline-grid; grid-template-columns: repeat(9, 3px); grid-auto-rows: 3px; gap: 3px; align-content: center;
+  color: var(--ck-component-loader-dotActive, var(--ck-alias-color-primary-interaction)); }
+.cm-loader-scan i { width: 2px; height: 2px; border-radius: 50%; background: currentColor; opacity: .18;
+  animation: cm-mx-col calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: calc(var(--c, 0) * var(--ck-motion-stagger) * 2); }
+@keyframes cm-mx-col { 0%, 100% { opacity: .18; } 12% { opacity: 1; } 30% { opacity: .18; } }
+@keyframes cm-ldot-r { 0%, 100% { opacity: .3; } 50% { opacity: .8; } }
+
+/* Carousel (approved 10/23): every item shares one box as tall as the longest item, top-aligned, so the first line
+   never jumps. The new item travels distance.enter sideways in the paging direction; the old one only fades. */
+.cm-carousel-items { display: grid; }
+.cm-carousel-items > * { grid-area: 1 / 1; align-self: start; opacity: 0; visibility: hidden; }
+.cm-carousel-items > .is-active, .cm-carousel-items > .is-out { visibility: visible; }
+.cm-carousel-items > .is-active { opacity: 1; }
+.cm-carousel-items > .is-in { animation: cm-cx-in var(--ck-motion-duration-standard) var(--ck-motion-easing-enter) both; }
+.cm-carousel-items > .is-out { animation: cm-exit var(--ck-motion-duration-quick) var(--ck-motion-easing-exit) both; }
+@keyframes cm-cx-in { from { opacity: 0; transform: translate3d(calc(var(--cm-dir, 1) * var(--ck-motion-distance-enter)), 0, 0); } to { opacity: 1; transform: none; } }
+
+/* Pixel numbers (approved 10/23, locked as built in the master deck). */
+/* Chapter numeral: 5 x 9 cells fill in reading order; JS sets --cm-progress (0..1) from scroll. */
+.cm-numeral { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(9, 1fr); aspect-ratio: 5 / 9; pointer-events: none; }
+.cm-numeral i { background: var(--ck-builds-accent-signal, var(--ck-alias-color-primary-interaction));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--ck-builds-accent-signal, var(--ck-alias-color-primary-interaction)) 25%, transparent);
+  transition: opacity var(--ck-motion-duration-standard) var(--ck-motion-easing-enter), transform var(--ck-motion-duration-standard) var(--ck-motion-easing-enter); }
+.cm-numeral i.is-off { background: transparent; box-shadow: none; }
+.cm-numeral i.is-wait { opacity: 0; transform: scale(.4); }
+/* Metric number: glyphs clip up from the bottom in 6 hard steps, stagger per glyph, once. */
+.cm-pxnum { font-family: var(--ck-brand-font-family-pixel-bold, inherit); }
+.cm-pxnum .cm-px-g { display: inline-block; font-style: normal; clip-path: inset(100% 0 0 0); }
+.cm-pxnum.is-built .cm-px-g { animation: cm-px-build var(--ck-motion-duration-standard) steps(6, end) both; animation-delay: calc(var(--i, 0) * var(--ck-motion-stagger)); }
+@keyframes cm-px-build { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* Pixel type and labels (approved 10/23): accent words are the pixel cut, upright. Pill and button labels are optically centered. */
+.cm-pixel { font-family: var(--ck-brand-font-family-pixel, inherit); font-style: normal; }
+.cm-label-center { display: inline-flex; align-items: center; justify-content: center; line-height: 1.2; }
+@supports (text-box: trim-both cap alphabetic) { .cm-label-center { text-box: trim-both cap alphabetic; line-height: 1; } }
+
+.cm-toast {
+  position: fixed; left: 50%; bottom: calc(var(--ck-alias-space-lg, 24px) + env(safe-area-inset-bottom, 0px)); z-index: 50;
+  translate: -50% 0; pointer-events: none;
+  padding: var(--ck-component-toast-paddingY, var(--ck-alias-space-sm)) var(--ck-component-toast-paddingX, var(--ck-alias-space-md));
+  border-radius: var(--ck-component-toast-radius, var(--ck-alias-radius-md));
+  background: var(--ck-component-toast-background, var(--ck-alias-color-background-inverted));
+  color: var(--ck-component-toast-text, var(--ck-alias-color-text-inverted));
+  opacity: 0;
+}
+.cm-toast.is-in { animation: cm-enter var(--ck-motion-duration-quick) var(--ck-motion-easing-enter) both; }
+.cm-toast.is-out { animation: cm-exit var(--ck-motion-duration-quick) var(--ck-motion-easing-exit) both; }
+@media (prefers-reduced-motion: reduce) {
+  .cm-loader i, .cm-loader-scan i { animation: cm-ldot-r calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: 0s; }
+  .cm-carousel-items > .is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+  .cm-numeral i { transition: none; }
+  .cm-pxnum .cm-px-g { clip-path: none; animation: none !important; }
+  .cm-toast.is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+}
+html[data-motion="reduce"] .cm-loader i, html[data-motion="reduce"] .cm-loader-scan i { animation: cm-ldot-r calc(var(--ck-motion-duration-standard) * 3) linear infinite; animation-delay: 0s; }
+html[data-motion="reduce"] .cm-carousel-items > .is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
+html[data-motion="reduce"] .cm-numeral i { transition: none; }
+html[data-motion="reduce"] .cm-pxnum .cm-px-g { clip-path: none; animation: none !important; }
+html[data-motion="reduce"] .cm-toast.is-in { animation: cm-exit var(--cm-reduced) var(--ck-motion-easing-standard) reverse both; }
