@@ -839,9 +839,9 @@
 .ck-font-label-proof {
   font-family: "Doto";
   font-weight: 800;
-  font-size: 13px;
-  line-height: 20.15px;
-  letter-spacing: 0.78px;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.96px;
 }
 .ck-font-body-short {
   font-family: "Inter";
@@ -995,4 +995,25 @@
   line-height: 20px;
   letter-spacing: 0;
   text-box: trim-both cap alphabetic;
+}
+.ck-pairing-serif-statement {
+  font-family: "Instrument Serif";
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 96px;
+  letter-spacing: -0.96px;
+}
+.ck-pairing-serif-subtitle {
+  font-family: "Instrument Serif";
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 60.32px;
+  letter-spacing: -0.58px;
+}
+.ck-pairing-serif-kicker {
+  font-family: "Instrument Serif";
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 49.5px;
+  letter-spacing: -0.45px;
 }
