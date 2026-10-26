@@ -1,5 +1,5 @@
 /* Cadence Pager (10/26). One pagination for carousels (inline) and the deck rail.
-   Look: the dot-visual donut. An unlit dot board on the mesh pitch, one square of dots per page,
+   Look: the dot-visual donut. An unlit dot board, 2 dense dots per page (1 across),
    dusk ahead, lilac passed, blue where you are. Arrows are dot chevrons that light blue with a glow on hover.
    Motion: the current page slides on transform; passed pages fade on opacity. Nothing changes size.
    Tokens: component.pager.* (dist/css/cadence-kit.css). Fallbacks are kit aliases only: 0 hex, 0 raw ms. Load dist/css/cadence-kit.css first, or define the tokens. */
