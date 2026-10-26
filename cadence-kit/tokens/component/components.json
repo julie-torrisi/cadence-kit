@@ -269,7 +269,7 @@
       }
     },
     "pager": {
-      "$description": "Pager (10/26): one pagination for carousels (inline) and the deck rail. Pages are squares of mesh dots on an unlit dot board, styled like the dot-visual donut. Replaces the 10/23 pill pager.",
+      "$description": "Pager (10/26): one pagination for carousels (inline) and the deck rail. Each page is 2 mesh dots along the direction of travel x 1 across, dense, at the dot type's resolution, on an unlit dot board; the pitch shrinks so every page fits (Julie, 10/26 evening). Replaces the 10/23 pill pager and the 2 x 2 squares.",
       "target": {
         "$type": "dimension",
         "$value": "{alias.size.target}",
@@ -287,10 +287,36 @@
         "$type": "dimension",
         "$value": "{alias.board.dot}"
       },
+      "pitchDense": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        },
+        "$description": "Pitch at the dot type's resolution (measured from the dot type on Julie's pages); the largest the pager draws"
+      },
+      "pitchMin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Smallest pitch the pager shrinks to; below it the board becomes a sliding window"
+      },
+      "dotDense": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Dot diameter as a share of the pitch, so pages read as solid marks"
+      },
       "mark": {
         "$type": "number",
         "$value": 2,
-        "$description": "Cells per side of a page square"
+        "$description": "Dots per page along the direction of travel"
+      },
+      "markAcross": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Dots per page across the board: rail 1 wide x 2 tall, horizontal 2 wide x 1 tall"
       },
       "gap": {
         "$type": "number",
@@ -300,7 +326,12 @@
       "margin": {
         "$type": "number",
         "$value": 3,
-        "$description": "Board cells past the squares on every side"
+        "$description": "Legacy: board cells past the pages on every side (2 x 2 squares). The dense pattern uses marginDense"
+      },
+      "marginDense": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Unlit board cells past the pages on every side"
       },
       "field": {
         "$type": "color",

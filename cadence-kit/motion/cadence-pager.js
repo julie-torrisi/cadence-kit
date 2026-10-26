@@ -10,9 +10,12 @@
      arrows     inline only, default true
      noun       'Page' by default ('Testimonial', 'Slide' ...)
      onGo(i, how)  called when a person picks a page: how = 'arrow' | 'board' | 'key'
-   Layout: under 760px wide the rail turns into a bar (horizontal) and the pitch steps down to pitchCompact.
-   When the board is longer than the room it has, it becomes a window that slides to keep the current page in view,
-   snapped to whole squares. Motion follows motion-sound-haptics.md: transform and opacity only. */
+   Look (Julie, 10/26): each page is 2 dots along the board x 1 dot across (markAcross), dense dots (dotDense = .8 of the pitch)
+   at the dot type's resolution (pitchDense 5px), on an unlit board with a 1-dot margin (marginDense). Vertical rail: 1 wide x 2 tall.
+   Horizontal (phone bar, carousels): 2 wide x 1 tall. The pitch shrinks to fit the room, never below pitchMin (3px).
+   Layout: under 760px wide the rail turns into a bar (horizontal).
+   Only when the board still won't fit at pitchMin does it become a window that slides to keep the current page in view,
+   snapped to whole pages. Motion follows motion-sound-haptics.md: transform and opacity only. */
 (function () {
   'use strict';
   var NS = 'http://www.w3.org/2000/svg';
@@ -37,7 +40,7 @@
     var acts = (o.acts || []).slice().sort(function (a, b) { return a.start - b.start; });
     var cur = Math.min(items - 1, Math.max(0, o.start | 0));
     var MARK = tok('--ck-component-pager-mark', 2), GAP = tok('--ck-component-pager-gap', 1), B = tok('--ck-component-pager-margin', 3);
-    var STEP = MARK + GAP;
+    var MX = MARK, STEP = MARK + GAP;   // MARK = dots along the board per page, MX = dots across
 
     var el = document.createElement('div');
     el.className = 'ck-pager' + (rail ? ' is-rail' : '');
@@ -58,18 +61,27 @@
     }
     host.replaceChildren(el);
 
-    var svg, board, bead, lit = [], pos = [], cells = 0, pitch = 8, vertical = rail, room = Infinity;
+    var svg, board, bead, lit = [], pos = [], cells = 0, pitch = 8, vertical = rail, room = Infinity, r = R;
     function actOf(i) { var a = null; acts.forEach(function (x) { if (x.start <= i) a = x; }); return a; }
 
     function build() {
       var bar = rail && innerWidth < 760;
       el.classList.toggle('is-bar', bar);
       vertical = rail && !bar;
-      pitch = innerWidth < 760 ? tok('--ck-component-pager-pitchCompact', 6) : tok('--ck-component-pager-pitch', 8);
+      // the room the board has: rail = screen height minus two targets and the counter; inline/bar = the host's width minus arrows
+      var target = tok('--ck-component-pager-target', 44);
+      if (vertical) room = innerHeight - 2 * target - 80;
+      else if (bar) room = innerWidth - 3 * target;   // the phone bar clears the deck's pause button
+      else room = Math.min(host.clientWidth || innerWidth, innerWidth - 32) - (prev ? 2 * target : 0);
+      B = tok('--ck-component-pager-marginDense', 1); MX = tok('--ck-component-pager-markAcross', 1);
       pos = []; var c = B;
       for (var k = 0; k < items; k++) { pos.push(c); c += STEP; }
       cells = c - GAP + B;
-      var across = MARK + 2 * B;
+      var across = MX + 2 * B;
+      // dense dots at the dot type's resolution, shrunk (never below pitchMin) so every page fits its room
+      pitch = Math.max(tok('--ck-component-pager-pitchMin', 3),
+        Math.min(tok('--ck-component-pager-pitchDense', 5), Math.floor(room / cells * 4) / 4));
+      r = U * tok('--ck-component-pager-dotDense', .8) / 2;
       var W = (vertical ? across : cells) * U, H = (vertical ? cells : across) * U;
       svg = document.createElementNS(NS, 'svg');
       svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false');
@@ -77,20 +89,15 @@
       board = document.createElementNS(NS, 'g'); board.setAttribute('class', 'ck-pager-board'); svg.append(board);
       function at(a, b) { return vertical ? [(b + .5) * U, (a + .5) * U] : [(a + .5) * U, (b + .5) * U]; }
       function dot(a, b, cls, parent) { var p = at(a, b), e = document.createElementNS(NS, 'circle');
-        e.setAttribute('cx', p[0]); e.setAttribute('cy', p[1]); e.setAttribute('r', R); if (cls) e.setAttribute('class', cls); parent.append(e); return e; }
+        e.setAttribute('cx', p[0]); e.setAttribute('cy', p[1]); e.setAttribute('r', r); if (cls) e.setAttribute('class', cls); parent.append(e); return e; }
       var inMark = {}; pos.forEach(function (p) { for (var i = 0; i < MARK; i++) inMark[p + i] = 1; });
-      for (var a = 0; a < cells; a++) for (var b = 0; b < across; b++) dot(a, b, inMark[a] && b >= B && b < B + MARK ? 'a' : 'f', board);
+      for (var a = 0; a < cells; a++) for (var b = 0; b < across; b++) dot(a, b, inMark[a] && b >= B && b < B + MX ? 'a' : 'f', board);
       lit = pos.map(function (p) { var g = document.createElementNS(NS, 'g');
-        for (var i = 0; i < MARK; i++) for (var j = B; j < B + MARK; j++) dot(p + i, j, 's', g); board.append(g); return g; });
+        for (var i = 0; i < MARK; i++) for (var j = B; j < B + MX; j++) dot(p + i, j, 's', g); board.append(g); return g; });
       bead = document.createElementNS(NS, 'g'); bead.setAttribute('class', 'bead');
-      for (var i = 0; i < MARK; i++) for (var j = B; j < B + MARK; j++) dot(pos[0] + i, j, '', bead);
+      for (var i = 0; i < MARK; i++) for (var j = B; j < B + MX; j++) dot(pos[0] + i, j, '', bead);
       board.append(bead);
       view.replaceChildren(svg);
-      // the room the board has: rail = screen height minus two targets and the counter; inline/bar = the host's width minus arrows
-      var target = tok('--ck-component-pager-target', 44);
-      if (vertical) room = innerHeight - 2 * target - 80;
-      else if (bar) room = innerWidth - 3 * target;   // the phone bar clears the deck's pause button
-      else room = Math.min(host.clientWidth || innerWidth, innerWidth - 32) - (prev ? 2 * target : 0);
       var full = (vertical ? H : W) / U * pitch;
       view.style[vertical ? 'blockSize' : 'inlineSize'] = full > room ? Math.floor(room / (STEP * pitch)) * STEP * pitch + 'px' : '';
       view.style[vertical ? 'inlineSize' : 'blockSize'] = '';

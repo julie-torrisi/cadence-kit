@@ -1,7 +1,7 @@
 /* Cadence Pager (10/26). One pagination for carousels (inline) and the deck rail.
    Look: the dot-visual donut. An unlit dot board on the mesh pitch, one square of dots per page,
    dusk ahead, lilac passed, blue where you are. Arrows are dot chevrons that light blue with a glow on hover.
-   Motion: the current square slides on transform; passed squares fade on opacity. Nothing changes size.
+   Motion: the current page slides on transform; passed pages fade on opacity. Nothing changes size.
    Tokens: component.pager.* (dist/css/cadence-kit.css). Fallbacks are kit aliases only: 0 hex, 0 raw ms. Load dist/css/cadence-kit.css first, or define the tokens. */
 .ck-pager {
   --pg-target: var(--ck-component-pager-target, var(--ck-alias-size-target));
@@ -54,7 +54,7 @@
 .ck-pager-live { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 /* law 6: any key or press finishes whatever is still moving */
 .ck-pager.fin .ck-pager-board, .ck-pager.fin .bead, .ck-pager.fin .s { transition: none; }
-/* law 10: reduced motion keeps the meaning. The square jumps; passed squares fade together. */
+/* law 10: reduced motion keeps the meaning. The current page jumps; passed pages fade together. */
 @media (prefers-reduced-motion: reduce) {
   .ck-pager .ck-pager-board, .ck-pager .bead { transition: none; }
   .ck-pager .s, .ck-pager .s:not(.on) { transition: opacity var(--pg-dur-reduced) var(--pg-ease); }

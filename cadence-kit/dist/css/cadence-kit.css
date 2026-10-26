@@ -528,9 +528,14 @@
   --ck-component-pager-pitch: var(--ck-alias-board-pitch);
   --ck-component-pager-pitchCompact: var(--ck-alias-board-pitchCompact);
   --ck-component-pager-dot: var(--ck-alias-board-dot);
+  --ck-component-pager-pitchDense: 5px;
+  --ck-component-pager-pitchMin: 3px;
+  --ck-component-pager-dotDense: 0.8;
   --ck-component-pager-mark: 2;
+  --ck-component-pager-markAcross: 1;
   --ck-component-pager-gap: 1;
   --ck-component-pager-margin: 3;
+  --ck-component-pager-marginDense: 1;
   --ck-component-pager-field: var(--ck-alias-color-board-unlit);
   --ck-component-pager-ahead: var(--ck-alias-color-board-ahead);
   --ck-component-pager-passed: var(--ck-alias-color-board-passed);
