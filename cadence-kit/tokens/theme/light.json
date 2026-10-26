@@ -330,6 +330,49 @@
       "dot": {
         "$type": "color",
         "$value": "{brand.color.role.neutral.light}"
+      },
+      "unlit": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0431,
+            0.0471,
+            0.0471
+          ],
+          "hex": "#0b0c0c",
+          "alpha": 0.09
+        },
+        "$description": "Light: ink at 9% (proposed 10/26, unchecked on a Light surface)"
+      },
+      "dim": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0431,
+            0.0471,
+            0.0471
+          ],
+          "hex": "#0b0c0c",
+          "alpha": 0.26
+        },
+        "$description": "Light: ink at 26% (proposed 10/26)"
+      },
+      "ahead": {
+        "$type": "color",
+        "$value": "{mode.text.subtle}",
+        "$description": "Light: ink rule, no blue or lilac (proposed 10/26)"
+      },
+      "passed": {
+        "$type": "color",
+        "$value": "{brand.color.palette.neutral.800}",
+        "$description": "Light: ink rule (proposed 10/26)"
+      },
+      "current": {
+        "$type": "color",
+        "$value": "{mode.primary.interaction}",
+        "$description": "Light: ink rule (proposed 10/26)"
       }
     }
   },

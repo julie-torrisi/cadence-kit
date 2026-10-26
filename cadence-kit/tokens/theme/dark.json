@@ -330,6 +330,49 @@
       "dot": {
         "$type": "color",
         "$value": "{brand.color.role.neutral.dark}"
+      },
+      "unlit": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6902,
+            0.6902,
+            0.7608
+          ],
+          "hex": "#b0b0c2",
+          "alpha": 0.09
+        },
+        "$description": "Dot board field dot: silk/mist at 9% (dot-visual --dv-unlit, master 10/26)"
+      },
+      "dim": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6902,
+            0.6902,
+            0.7608
+          ],
+          "hex": "#b0b0c2",
+          "alpha": 0.26
+        },
+        "$description": "Dot visual surface: silk/mist at 26% (dot-visual --dv-dim)"
+      },
+      "ahead": {
+        "$type": "color",
+        "$value": "{mode.text.subtle}",
+        "$description": "Pager page ahead; dot-visual dusk tone"
+      },
+      "passed": {
+        "$type": "color",
+        "$value": "{mode.secondary.interaction}",
+        "$description": "Pager page passed; dot-visual lilac tone"
+      },
+      "current": {
+        "$type": "color",
+        "$value": "{mode.primary.interaction}",
+        "$description": "Pager current page; dot-visual blue tone (the point)"
       }
     }
   },
