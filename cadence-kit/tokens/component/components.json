@@ -269,33 +269,71 @@
       }
     },
     "pager": {
-      "slot": {
-        "$type": "dimension",
-        "$value": "{alias.size.sm}"
-      },
-      "dotSize": {
-        "$type": "dimension",
-        "$value": "{alias.space.xs}"
-      },
-      "pillLength": {
-        "$type": "dimension",
-        "$value": "{alias.size.xs}"
-      },
+      "$description": "Pager (10/26): one pagination for carousels (inline) and the deck rail. Pages are squares of mesh dots on an unlit dot board, styled like the dot-visual donut. Replaces the 10/23 pill pager.",
       "target": {
         "$type": "dimension",
-        "$value": "{alias.size.target}"
+        "$value": "{alias.size.target}",
+        "$description": "Hit area for arrows and the board"
       },
-      "dotIdle": {
-        "$type": "color",
-        "$value": "{alias.color.border.medium}"
+      "pitch": {
+        "$type": "dimension",
+        "$value": "{alias.board.pitch}"
       },
-      "dotActive": {
+      "pitchCompact": {
+        "$type": "dimension",
+        "$value": "{alias.board.pitchCompact}"
+      },
+      "dot": {
+        "$type": "dimension",
+        "$value": "{alias.board.dot}"
+      },
+      "mark": {
+        "$type": "number",
+        "$value": 2,
+        "$description": "Cells per side of a page square"
+      },
+      "gap": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Empty board cells between page squares"
+      },
+      "margin": {
+        "$type": "number",
+        "$value": 3,
+        "$description": "Board cells past the squares on every side"
+      },
+      "field": {
         "$type": "color",
-        "$value": "{alias.color.primary.interaction}"
+        "$value": "{alias.color.board.unlit}"
+      },
+      "ahead": {
+        "$type": "color",
+        "$value": "{alias.color.board.ahead}"
+      },
+      "passed": {
+        "$type": "color",
+        "$value": "{alias.color.board.passed}"
+      },
+      "current": {
+        "$type": "color",
+        "$value": "{alias.color.board.current}"
+      },
+      "arrow": {
+        "$type": "color",
+        "$value": "{alias.color.text.default}"
+      },
+      "arrowHover": {
+        "$type": "color",
+        "$value": "{alias.color.board.current}",
+        "$description": "Arrow hover lights to the current color with a glow, like the kit dot icons' Hover state"
       },
       "text": {
         "$type": "color",
         "$value": "{alias.color.text.subtle}"
+      },
+      "textCurrent": {
+        "$type": "color",
+        "$value": "{alias.color.text.default}"
       }
     }
   }

@@ -1,0 +1,63 @@
+/* Cadence Pager (10/26). One pagination for carousels (inline) and the deck rail.
+   Look: the dot-visual donut. An unlit dot board on the mesh pitch, one square of dots per page,
+   dusk ahead, lilac passed, blue where you are. Arrows are dot chevrons that light blue with a glow on hover.
+   Motion: the current square slides on transform; passed squares fade on opacity. Nothing changes size.
+   Tokens: component.pager.* (dist/css/cadence-kit.css). Fallbacks are kit aliases only: 0 hex, 0 raw ms. Load dist/css/cadence-kit.css first, or define the tokens. */
+.ck-pager {
+  --pg-target: var(--ck-component-pager-target, var(--ck-alias-size-target));
+  --pg-field: var(--ck-component-pager-field, var(--ck-alias-color-board-unlit));
+  --pg-ahead: var(--ck-component-pager-ahead, var(--ck-alias-color-board-ahead));
+  --pg-passed: var(--ck-component-pager-passed, var(--ck-alias-color-board-passed));
+  --pg-current: var(--ck-component-pager-current, var(--ck-alias-color-board-current));
+  --pg-arrow: var(--ck-component-pager-arrow, var(--ck-alias-color-text-default));
+  --pg-arrow-hover: var(--ck-component-pager-arrowHover, var(--pg-current));
+  --pg-text: var(--ck-component-pager-text, var(--ck-alias-color-text-subtle));
+  --pg-text-current: var(--ck-component-pager-textCurrent, var(--ck-alias-color-text-default));
+  --pg-dur: var(--ck-motion-duration-standard);
+  --pg-dur-back: var(--ck-motion-duration-quick);
+  --pg-dur-reduced: var(--ck-motion-duration-reduced);
+  --pg-ease-in: var(--ck-motion-easing-enter);
+  --pg-ease-out: var(--ck-motion-easing-exit);
+  --pg-ease: var(--ck-motion-easing-standard);
+  display: flex; align-items: center; flex-wrap: wrap; justify-content: center; row-gap: 12px; position: relative;
+}
+.ck-pager.is-rail { flex-direction: column; flex-wrap: nowrap; }
+.ck-pager-view { position: relative; overflow: hidden; display: grid; place-items: center start;
+  min-inline-size: var(--pg-target); min-block-size: var(--pg-target); cursor: pointer; border-radius: 12px; }
+.ck-pager.is-rail:not(.is-bar) .ck-pager-view { place-items: start center; }
+.ck-pager-view:focus-visible { outline: 2px solid var(--pg-current); outline-offset: 2px; }
+.ck-pager svg { display: block; max-width: none; overflow: visible; }
+.ck-pager .ck-pager-board { transition: transform var(--pg-dur) var(--pg-ease-in); }
+.ck-pager .f { fill: var(--pg-field); }
+.ck-pager .a { fill: var(--pg-ahead); }
+.ck-pager .s { fill: var(--pg-passed); opacity: 0; transition: opacity var(--pg-dur) var(--pg-ease-in); }
+.ck-pager .s.on { opacity: 1; }
+.ck-pager .s:not(.on) { transition-duration: var(--pg-dur-back); transition-timing-function: var(--pg-ease-out); }   /* law 3 */
+.ck-pager .bead { fill: var(--pg-current); transition: transform var(--pg-dur) var(--pg-ease-in); }
+.ck-pager-arrow { inline-size: var(--pg-target); block-size: var(--pg-target); display: grid; place-items: center; padding: 0; border: 0; border-radius: 12px;
+  background: transparent; color: var(--pg-arrow); cursor: pointer; flex: none; transition: color var(--pg-dur-back) var(--pg-ease); }
+.ck-pager-arrow svg { inline-size: 25px; block-size: 25px; }
+.ck-pager-arrow:hover { color: var(--pg-arrow-hover); }
+.ck-pager-arrow:hover svg { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--pg-arrow-hover) 80%, transparent)) drop-shadow(0 0 8px color-mix(in srgb, var(--pg-arrow-hover) 45%, transparent)); }
+.ck-pager-arrow:focus-visible { outline: 2px solid var(--pg-current); outline-offset: 0; }
+/* counter, set like the donut's label: mono caps, dusk, current page in mist */
+.ck-pager-count { flex-basis: 100%; display: inline-flex; justify-content: center; gap: .6ch; white-space: nowrap;
+  font: 400 12.8px/1 var(--font-mono, ui-monospace, "SF Mono", Menlo, monospace); font-variant-numeric: tabular-nums;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--pg-text); }
+.ck-pager-count b { color: var(--pg-text-current); font-weight: 400; }
+.ck-pager.is-rail:not(.is-bar) .ck-pager-count { flex-basis: auto; flex-direction: column; align-items: center; gap: 6px; }
+/* act name beside the rail, on hover and focus only */
+.ck-pager-tip { position: absolute; inset-inline-end: calc(100% + 4px); top: 0; transform: translateY(-50%); white-space: nowrap; pointer-events: none;
+  font: 400 12.8px/1 var(--font-mono, ui-monospace, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--pg-text-current);
+  opacity: 0; transition: opacity var(--pg-dur-back) var(--pg-ease); }
+.ck-pager.is-tip .ck-pager-tip { opacity: 1; }
+.ck-pager-live { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* law 6: any key or press finishes whatever is still moving */
+.ck-pager.fin .ck-pager-board, .ck-pager.fin .bead, .ck-pager.fin .s { transition: none; }
+/* law 10: reduced motion keeps the meaning. The square jumps; passed squares fade together. */
+@media (prefers-reduced-motion: reduce) {
+  .ck-pager .ck-pager-board, .ck-pager .bead { transition: none; }
+  .ck-pager .s, .ck-pager .s:not(.on) { transition: opacity var(--pg-dur-reduced) var(--pg-ease); }
+}
+html[data-motion="reduce"] .ck-pager .ck-pager-board, html[data-motion="reduce"] .ck-pager .bead { transition: none; }
+html[data-motion="reduce"] .ck-pager .s, html[data-motion="reduce"] .ck-pager .s:not(.on) { transition: opacity var(--pg-dur-reduced) var(--pg-ease); }

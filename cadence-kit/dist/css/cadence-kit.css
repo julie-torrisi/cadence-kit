@@ -371,6 +371,11 @@
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-bold);
   --ck-mode-board-background: var(--ck-brand-color-role-neutral-lightest);
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
+  --ck-mode-board-unlit: #0b0c0c17;
+  --ck-mode-board-dim: #0b0c0c42;
+  --ck-mode-board-ahead: var(--ck-brand-color-palette-neutral-500);
+  --ck-mode-board-passed: var(--ck-brand-color-palette-neutral-800);
+  --ck-mode-board-current: var(--ck-brand-color-palette-neutral-950);
   --ck-alias-borderWidth-xs: var(--ck-borderWidth-xs);
   --ck-alias-borderWidth-sm: var(--ck-borderWidth-sm);
   --ck-alias-borderWidth-md: var(--ck-borderWidth-md);
@@ -427,6 +432,11 @@
   --ck-alias-color-icon-critical: var(--ck-mode-icon-critical);
   --ck-alias-color-board-background: var(--ck-mode-board-background);
   --ck-alias-color-board-dot: var(--ck-mode-board-dot);
+  --ck-alias-color-board-unlit: var(--ck-mode-board-unlit);
+  --ck-alias-color-board-dim: var(--ck-mode-board-dim);
+  --ck-alias-color-board-ahead: var(--ck-mode-board-ahead);
+  --ck-alias-color-board-passed: var(--ck-mode-board-passed);
+  --ck-alias-color-board-current: var(--ck-mode-board-current);
   --ck-alias-size-none: var(--ck-size-none);
   --ck-alias-size-3xs: var(--ck-size-3xs);
   --ck-alias-size-2xs: var(--ck-size-2xs);
@@ -453,8 +463,9 @@
   --ck-alias-grid-gutter: var(--ck-grid-gutter);
   --ck-alias-screen-maxWidth: var(--ck-screen-maxWidth);
   --ck-alias-screen-layout-paddingLeftRight: var(--ck-screen-layout-paddingLeftRight);
-  --ck-alias-board-pitch: 5px;
-  --ck-alias-board-dot: 4px;
+  --ck-alias-board-pitch: 8px;
+  --ck-alias-board-dot: 3.8px;
+  --ck-alias-board-pitchCompact: 6px;
   --ck-component-button-height: var(--ck-alias-size-target);
   --ck-component-button-paddingX: var(--ck-alias-space-md);
   --ck-component-button-radius: var(--ck-alias-radius-md);
@@ -513,13 +524,21 @@
   --ck-component-icon-success: var(--ck-alias-color-icon-success);
   --ck-component-icon-critical: var(--ck-alias-color-icon-critical);
   --ck-component-icon-dimOpacity: 30;
-  --ck-component-pager-slot: var(--ck-alias-size-sm);
-  --ck-component-pager-dotSize: var(--ck-alias-space-xs);
-  --ck-component-pager-pillLength: var(--ck-alias-size-xs);
   --ck-component-pager-target: var(--ck-alias-size-target);
-  --ck-component-pager-dotIdle: var(--ck-alias-color-border-medium);
-  --ck-component-pager-dotActive: var(--ck-alias-color-primary-interaction);
+  --ck-component-pager-pitch: var(--ck-alias-board-pitch);
+  --ck-component-pager-pitchCompact: var(--ck-alias-board-pitchCompact);
+  --ck-component-pager-dot: var(--ck-alias-board-dot);
+  --ck-component-pager-mark: 2;
+  --ck-component-pager-gap: 1;
+  --ck-component-pager-margin: 3;
+  --ck-component-pager-field: var(--ck-alias-color-board-unlit);
+  --ck-component-pager-ahead: var(--ck-alias-color-board-ahead);
+  --ck-component-pager-passed: var(--ck-alias-color-board-passed);
+  --ck-component-pager-current: var(--ck-alias-color-board-current);
+  --ck-component-pager-arrow: var(--ck-alias-color-text-default);
+  --ck-component-pager-arrowHover: var(--ck-alias-color-board-current);
   --ck-component-pager-text: var(--ck-alias-color-text-subtle);
+  --ck-component-pager-textCurrent: var(--ck-alias-color-text-default);
   --ck-motion-duration-step: 50ms;
   --ck-motion-duration-instant: 100ms;
   --ck-motion-duration-quick: 200ms;
@@ -580,6 +599,11 @@
     --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-medium);
     --ck-mode-board-background: var(--ck-brand-color-palette-silk-navy-950);
     --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
+    --ck-mode-board-unlit: #b0b0c217;
+    --ck-mode-board-dim: #b0b0c242;
+    --ck-mode-board-ahead: var(--ck-brand-color-palette-silk-dusk);
+    --ck-mode-board-passed: var(--ck-brand-color-palette-lilac-400);
+    --ck-mode-board-current: var(--ck-brand-color-palette-blue-400);
   }
 }
 
@@ -624,6 +648,11 @@
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-medium);
   --ck-mode-board-background: var(--ck-brand-color-palette-silk-navy-950);
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
+  --ck-mode-board-unlit: #b0b0c217;
+  --ck-mode-board-dim: #b0b0c242;
+  --ck-mode-board-ahead: var(--ck-brand-color-palette-silk-dusk);
+  --ck-mode-board-passed: var(--ck-brand-color-palette-lilac-400);
+  --ck-mode-board-current: var(--ck-brand-color-palette-blue-400);
 }
 
 [data-theme="light"] {
@@ -667,6 +696,11 @@
   --ck-mode-icon-critical: var(--ck-brand-color-role-intent-critical-bold);
   --ck-mode-board-background: var(--ck-brand-color-role-neutral-lightest);
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
+  --ck-mode-board-unlit: #0b0c0c17;
+  --ck-mode-board-dim: #0b0c0c42;
+  --ck-mode-board-ahead: var(--ck-brand-color-palette-neutral-500);
+  --ck-mode-board-passed: var(--ck-brand-color-palette-neutral-800);
+  --ck-mode-board-current: var(--ck-brand-color-palette-neutral-950);
 }
 
 [data-platform="ios"] {

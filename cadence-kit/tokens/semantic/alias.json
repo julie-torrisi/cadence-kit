@@ -314,6 +314,26 @@
           "$type": "color",
           "$value": "{mode.board.dot}",
           "$description": "Dot Board idle dot"
+        },
+        "unlit": {
+          "$type": "color",
+          "$value": "{mode.board.unlit}"
+        },
+        "dim": {
+          "$type": "color",
+          "$value": "{mode.board.dim}"
+        },
+        "ahead": {
+          "$type": "color",
+          "$value": "{mode.board.ahead}"
+        },
+        "passed": {
+          "$type": "color",
+          "$value": "{mode.board.passed}"
+        },
+        "current": {
+          "$type": "color",
+          "$value": "{mode.board.current}"
         }
       }
     },
@@ -435,18 +455,26 @@
       "pitch": {
         "$type": "dimension",
         "$value": {
-          "value": 5,
+          "value": 8,
           "unit": "px"
         },
-        "$description": "Dot Board grid pitch"
+        "$description": "The one mesh pitch for every dot visual and the pager (dot-visual --dv-pitch, master 10/26)"
       },
       "dot": {
         "$type": "dimension",
         "$value": {
-          "value": 4,
+          "value": 3.8,
           "unit": "px"
         },
-        "$description": "Dot Board dot size"
+        "$description": "Dot diameter on the 8 pitch (R 1.9, dot-visual since 10/25 evening)"
+      },
+      "pitchCompact": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Mesh pitch under 760px wide"
       }
     }
   }
