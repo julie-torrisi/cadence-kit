@@ -361,7 +361,7 @@
       },
       "ahead": {
         "$type": "color",
-        "$value": "{brand.color.palette.neutral.500}",
+        "$value": "{mode.text.subtle}",
         "$description": "Light: ink rule, no blue or lilac (proposed 10/26)"
       },
       "passed": {
@@ -371,7 +371,7 @@
       },
       "current": {
         "$type": "color",
-        "$value": "{brand.color.palette.neutral.950}",
+        "$value": "{mode.primary.interaction}",
         "$description": "Light: ink rule (proposed 10/26)"
       }
     }

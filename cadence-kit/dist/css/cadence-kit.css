@@ -373,9 +373,9 @@
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
   --ck-mode-board-unlit: #0b0c0c17;
   --ck-mode-board-dim: #0b0c0c42;
-  --ck-mode-board-ahead: var(--ck-brand-color-palette-neutral-500);
+  --ck-mode-board-ahead: var(--ck-mode-text-subtle);
   --ck-mode-board-passed: var(--ck-brand-color-palette-neutral-800);
-  --ck-mode-board-current: var(--ck-brand-color-palette-neutral-950);
+  --ck-mode-board-current: var(--ck-mode-primary-interaction);
   --ck-alias-borderWidth-xs: var(--ck-borderWidth-xs);
   --ck-alias-borderWidth-sm: var(--ck-borderWidth-sm);
   --ck-alias-borderWidth-md: var(--ck-borderWidth-md);
@@ -601,9 +601,7 @@
     --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
     --ck-mode-board-unlit: #b0b0c217;
     --ck-mode-board-dim: #b0b0c242;
-    --ck-mode-board-ahead: var(--ck-brand-color-palette-silk-dusk);
-    --ck-mode-board-passed: var(--ck-brand-color-palette-lilac-400);
-    --ck-mode-board-current: var(--ck-brand-color-palette-blue-400);
+    --ck-mode-board-passed: var(--ck-mode-secondary-interaction);
   }
 }
 
@@ -650,9 +648,7 @@
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-dark);
   --ck-mode-board-unlit: #b0b0c217;
   --ck-mode-board-dim: #b0b0c242;
-  --ck-mode-board-ahead: var(--ck-brand-color-palette-silk-dusk);
-  --ck-mode-board-passed: var(--ck-brand-color-palette-lilac-400);
-  --ck-mode-board-current: var(--ck-brand-color-palette-blue-400);
+  --ck-mode-board-passed: var(--ck-mode-secondary-interaction);
 }
 
 [data-theme="light"] {
@@ -698,9 +694,7 @@
   --ck-mode-board-dot: var(--ck-brand-color-role-neutral-light);
   --ck-mode-board-unlit: #0b0c0c17;
   --ck-mode-board-dim: #0b0c0c42;
-  --ck-mode-board-ahead: var(--ck-brand-color-palette-neutral-500);
   --ck-mode-board-passed: var(--ck-brand-color-palette-neutral-800);
-  --ck-mode-board-current: var(--ck-brand-color-palette-neutral-950);
 }
 
 [data-platform="ios"] {

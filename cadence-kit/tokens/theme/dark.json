@@ -361,17 +361,17 @@
       },
       "ahead": {
         "$type": "color",
-        "$value": "{brand.color.palette.silk.dusk}",
+        "$value": "{mode.text.subtle}",
         "$description": "Pager page ahead; dot-visual dusk tone"
       },
       "passed": {
         "$type": "color",
-        "$value": "{brand.color.palette.lilac.400}",
+        "$value": "{mode.secondary.interaction}",
         "$description": "Pager page passed; dot-visual lilac tone"
       },
       "current": {
         "$type": "color",
-        "$value": "{brand.color.palette.blue.400}",
+        "$value": "{mode.primary.interaction}",
         "$description": "Pager current page; dot-visual blue tone (the point)"
       }
     }
