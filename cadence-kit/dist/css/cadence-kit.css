@@ -67,6 +67,9 @@
   --ck-brand-color-role-neutral-bold: var(--ck-brand-color-palette-neutral-800);
   --ck-brand-color-role-neutral-dark: var(--ck-brand-color-palette-neutral-900);
   --ck-brand-color-role-neutral-darkest: var(--ck-brand-color-palette-neutral-950);
+  --ck-brand-color-role-urgency-interrupts: var(--ck-brand-color-palette-silk-signal-red);
+  --ck-brand-color-role-urgency-canWait: var(--ck-brand-color-palette-silk-signal-amber);
+  --ck-brand-color-role-urgency-quiet: var(--ck-brand-color-palette-silk-signal-green);
   --ck-brand-color-palette-green-50: #eefbf3;
   --ck-brand-color-palette-green-100: #d3f5e0;
   --ck-brand-color-palette-green-200: #a8ebc2;
@@ -167,6 +170,9 @@
   --ck-brand-color-palette-silk-plum: #181322;
   --ck-brand-color-palette-silk-mauve: #645558;
   --ck-brand-color-palette-silk-clay: #806b6d;
+  --ck-brand-color-palette-silk-signal-red: #ec6460;
+  --ck-brand-color-palette-silk-signal-amber: #e4c058;
+  --ck-brand-color-palette-silk-signal-green: #64d498;
   --ck-brand-font-family-display: "Doto";
   --ck-brand-font-family-serif: "Instrument Serif";
   --ck-brand-font-family-content: "Inter";

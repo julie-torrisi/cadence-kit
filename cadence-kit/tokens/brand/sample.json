@@ -229,6 +229,23 @@
             "$type": "color",
             "$value": "{brand.color.palette.neutral.950}"
           }
+        },
+        "urgency": {
+          "interrupts": {
+            "$type": "color",
+            "$value": "{brand.color.palette.silk.signal-red}",
+            "$description": "Urgency: interrupts. Errors, trust and safety, deprecations. Sampled from Julie's taxonomy grid, 10/26."
+          },
+          "canWait": {
+            "$type": "color",
+            "$value": "{brand.color.palette.silk.signal-amber}",
+            "$description": "Urgency: can wait. Announcements, onboarding, promotions, best practices, education."
+          },
+          "quiet": {
+            "$type": "color",
+            "$value": "{brand.color.palette.silk.signal-green}",
+            "$description": "Urgency: quiet. Status, activity, milestones."
+          }
         }
       },
       "palette": {
@@ -1449,6 +1466,42 @@
                 0.4275
               ],
               "hex": "#806b6d"
+            }
+          },
+          "signal-red": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9255,
+                0.3922,
+                0.3765
+              ],
+              "hex": "#ec6460"
+            }
+          },
+          "signal-amber": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.8941,
+                0.7529,
+                0.3451
+              ],
+              "hex": "#e4c058"
+            }
+          },
+          "signal-green": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.3922,
+                0.8314,
+                0.5961
+              ],
+              "hex": "#64d498"
             }
           }
         }
